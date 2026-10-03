@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cedaron Hills Business Solutions</title>
+    <title>Cedaron Hills Business Solutions | CedFin</title>
 
     <meta name="description"
-          content="Cedaron Hills Business Solutions provides practical technology solutions for schools and businesses, including the CedFin School Management System.">
+          content="Cedaron Hills Business Solutions develops practical technology solutions, including CedFin School Management System.">
 
     <style>
         * {
@@ -23,73 +23,121 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            color: #1f2937;
+            color: #1e293b;
             background: #ffffff;
         }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
 
         /* =========================
            NAVIGATION
         ========================== */
 
         header {
-            background: #0b1f3a;
+            background: #071a33;
             color: white;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
         }
 
         .navbar {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 25px;
+            min-height: 76px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: bold;
+            color: white;
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
         }
 
         .logo span {
             color: #38bdf8;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
         }
 
-        nav a:hover {
+        .nav-links a {
+            color: #e2e8f0;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
             color: #38bdf8;
         }
+
+        .nav-portal {
+            background: #38bdf8;
+            color: #06233d !important;
+            padding: 10px 17px;
+            border-radius: 7px;
+        }
+
+        .nav-portal:hover {
+            background: #7dd3fc;
+        }
+
+        .menu-button {
+            display: none;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
 
         /* =========================
            HERO
         ========================== */
 
         .hero {
-            background: linear-gradient(135deg, #0b1f3a, #123e6b);
+            background:
+                radial-gradient(circle at 80% 20%, rgba(56,189,248,0.18), transparent 30%),
+                linear-gradient(135deg, #071a33, #0c3964);
+
             color: white;
-            padding: 100px 25px;
+            padding: 105px 0 95px;
         }
 
-        .hero-content {
-            max-width: 1200px;
-            margin: auto;
+        .hero-grid {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 65px;
             align-items: center;
         }
 
+        .eyebrow {
+            display: inline-block;
+            color: #38bdf8;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            margin-bottom: 15px;
+        }
+
         .hero h1 {
-            font-size: 52px;
-            line-height: 1.15;
+            font-size: clamp(42px, 5vw, 65px);
+            line-height: 1.08;
             margin-bottom: 25px;
         }
 
@@ -97,223 +145,417 @@
             color: #38bdf8;
         }
 
-        .hero p {
-            font-size: 19px;
+        .hero-text {
             color: #dbeafe;
-            margin-bottom: 30px;
+            font-size: 18px;
             max-width: 650px;
+            margin-bottom: 32px;
         }
 
-        .buttons {
+        .button-group {
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
+            gap: 13px;
         }
 
         .btn {
             display: inline-block;
-            padding: 13px 24px;
+            padding: 13px 22px;
             border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.2s;
         }
 
         .btn-primary {
             background: #38bdf8;
-            color: #082f49;
+            color: #06233d;
         }
 
         .btn-primary:hover {
             background: #7dd3fc;
+            transform: translateY(-2px);
         }
 
         .btn-outline {
-            border: 2px solid white;
+            border: 1px solid rgba(255,255,255,0.55);
             color: white;
         }
 
         .btn-outline:hover {
             background: white;
-            color: #0b1f3a;
+            color: #071a33;
         }
 
-        .hero-card {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 15px;
-            padding: 35px;
-            backdrop-filter: blur(8px);
+        .hero-panel {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
         }
 
-        .hero-card h2 {
-            margin-bottom: 15px;
+        .hero-panel-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            margin-bottom: 22px;
         }
 
-        .hero-card p {
-            font-size: 16px;
+        .hero-panel h2 {
+            font-size: 23px;
         }
+
+        .system-status {
+            font-size: 11px;
+            background: rgba(34,197,94,0.15);
+            color: #86efac;
+            padding: 6px 10px;
+            border-radius: 20px;
+        }
+
+        .hero-panel p {
+            color: #dbeafe;
+            font-size: 15px;
+            margin-bottom: 22px;
+        }
+
+        .hero-list {
+            list-style: none;
+        }
+
+        .hero-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: #e2e8f0;
+            font-size: 14px;
+        }
+
+        .hero-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hero-list li::before {
+            content: "✓";
+            color: #38bdf8;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
 
         /* =========================
-           GENERAL SECTIONS
+           INTRO STRIP
         ========================== */
 
-        section {
-            padding: 80px 25px;
+        .intro-strip {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
         }
 
-        .section-title {
+        .intro-item {
+            padding: 25px 20px;
             text-align: center;
-            margin-bottom: 50px;
+            border-right: 1px solid #e2e8f0;
         }
 
-        .section-title h2 {
-            font-size: 36px;
-            color: #0b1f3a;
-            margin-bottom: 12px;
+        .intro-item:last-child {
+            border-right: none;
         }
 
-        .section-title p {
+        .intro-item strong {
+            display: block;
+            color: #071a33;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .intro-item span {
             color: #64748b;
-            max-width: 700px;
-            margin: auto;
+            font-size: 13px;
         }
+
 
         /* =========================
            ABOUT
         ========================== */
 
+        section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin-bottom: 45px;
+        }
+
+        .section-heading.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            color: #071a33;
+            font-size: clamp(32px, 4vw, 45px);
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: #64748b;
+            font-size: 16px;
+        }
+
         .about {
-            background: #f8fafc;
+            background: white;
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 65px;
             align-items: center;
         }
 
-        .about h2 {
-            color: #0b1f3a;
-            font-size: 36px;
-            margin-bottom: 20px;
+        .about-text p {
+            color: #475569;
+            margin-bottom: 18px;
         }
 
-        .about p {
-            margin-bottom: 15px;
+        .about-card {
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            padding: 35px;
+        }
+
+        .about-card h3 {
+            color: #071a33;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
             color: #475569;
         }
 
+
         /* =========================
-           CEDFIN
+           CEDFIN INTRO
         ========================== */
 
         .cedfin {
-            background: white;
-        }
-
-        .cedfin-box {
-            background: #eff6ff;
-            border-radius: 18px;
-            padding: 50px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .cedfin-box h2 {
-            font-size: 36px;
-            color: #0b1f3a;
-            margin-bottom: 20px;
-        }
-
-        .cedfin-box p {
-            color: #475569;
-            margin-bottom: 20px;
-        }
-
-        /* =========================
-           FEATURES
-        ========================== */
-
-        .features {
             background: #f8fafc;
         }
 
-        .feature-grid {
+        .cedfin-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
         }
 
-        .feature-card {
+        .cedfin-content h2 {
+            color: #071a33;
+            font-size: 40px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .cedfin-content p {
+            color: #475569;
+            margin-bottom: 18px;
+        }
+
+        .product-panel {
+            background: #071a33;
+            color: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 20px 45px rgba(7,26,51,0.18);
+        }
+
+        .product-panel h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .product-row {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #dbeafe;
+            font-size: 14px;
+        }
+
+        .product-row:last-child {
+            border-bottom: none;
+        }
+
+        .product-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(56,189,248,0.14);
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           STUDENT MANAGEMENT
+        ========================== */
+
+        .student-feature {
             background: white;
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .feature-visual {
+            background: linear-gradient(145deg, #071a33, #0d4774);
+            border-radius: 20px;
             padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s, box-shadow 0.2s;
+            color: white;
+            box-shadow: 0 20px 45px rgba(7,26,51,0.16);
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            margin-bottom: 20px;
         }
 
-        .feature-card h3 {
-            color: #0b1f3a;
-            margin-bottom: 10px;
+        .avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #38bdf8;
+            color: #06233d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
         }
 
-        .feature-card p {
-            color: #64748b;
-            font-size: 15px;
+        .profile-header h3 {
+            font-size: 18px;
         }
+
+        .profile-header p {
+            color: #bae6fd;
+            font-size: 12px;
+        }
+
+        .profile-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 13px;
+        }
+
+        .profile-row span {
+            color: #bae6fd;
+        }
+
+        .profile-row strong {
+            color: white;
+        }
+
+        .feature-content h2 {
+            color: #071a33;
+            font-size: 39px;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            color: #475569;
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 25px;
+            margin-bottom: 30px;
+        }
+
+        .feature-list div {
+            display: flex;
+            gap: 9px;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .feature-list span {
+            color: #0284c7;
+            font-weight: bold;
+        }
+
 
         /* =========================
            FREE TRIAL
         ========================== */
 
         .trial {
-            background: #0b1f3a;
+            background: linear-gradient(135deg, #071a33, #0c3964);
             color: white;
             text-align: center;
         }
 
         .trial h2 {
-            font-size: 40px;
+            font-size: clamp(32px, 4vw, 45px);
             margin-bottom: 15px;
         }
 
         .trial p {
-            max-width: 700px;
-            margin: 0 auto 30px;
             color: #dbeafe;
+            max-width: 700px;
+            margin: 0 auto 28px;
         }
+
 
         /* =========================
            CONTACT
         ========================== */
 
         .contact {
-            background: white;
+            background: #f8fafc;
         }
 
         .contact-box {
-            text-align: center;
-            max-width: 700px;
+            max-width: 800px;
             margin: auto;
+            text-align: center;
         }
 
         .contact-box h2 {
-            color: #0b1f3a;
-            font-size: 36px;
-            margin-bottom: 20px;
+            color: #071a33;
+            font-size: 40px;
+            margin-bottom: 15px;
         }
 
         .contact-box p {
@@ -321,47 +563,151 @@
             margin-bottom: 10px;
         }
 
+
         /* =========================
            FOOTER
         ========================== */
 
         footer {
-            background: #061426;
+            background: #04101f;
             color: #cbd5e1;
-            text-align: center;
-            padding: 30px 20px;
+            padding: 50px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 35px;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        footer h4 {
+            color: white;
+            margin-bottom: 12px;
         }
 
         footer p {
+            color: #94a3b8;
             font-size: 14px;
         }
+
+        footer a {
+            display: block;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            color: #38bdf8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 20px;
+            text-align: center;
+        }
+
 
         /* =========================
            MOBILE
         ========================== */
 
-        @media (max-width: 800px) {
+        @media (max-width: 850px) {
 
-            .hero-content,
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                right: 0;
+                background: #071a33;
+                padding: 20px 5%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 0;
+            }
+
+            .nav-portal {
+                text-align: center;
+            }
+
+            .hero-grid,
             .about-grid,
-            .cedfin-box {
+            .cedfin-grid,
+            .student-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero {
+                padding: 75px 0;
+            }
+
+            .hero-panel {
+                padding: 25px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .intro-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .intro-item:nth-child(-n+2) {
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 520px) {
 
             .hero h1 {
-                font-size: 40px;
+                font-size: 39px;
             }
 
-            .feature-grid {
+            .intro-grid {
                 grid-template-columns: 1fr;
             }
 
-            nav {
-                display: none;
+            .intro-item {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
             }
 
-            .cedfin-box {
-                padding: 30px;
+            .intro-item:last-child {
+                border-bottom: none;
+            }
+
+            section {
+                padding: 70px 0;
             }
         }
     </style>
@@ -369,45 +715,81 @@
 
 <body>
 
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+
 <header>
-    <div class="navbar">
 
-        <div class="logo">
+    <div class="container navbar">
+
+        <a href="index.html" class="logo">
             Cedaron <span>Hills</span>
-        </div>
+        </a>
 
-        <nav>
+        <button class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+
             <a href="#about">About</a>
+
             <a href="#cedfin">CedFin</a>
-            <a href="#features">Features</a>
-            <a href="#trial">Free Trial</a>
-            <a href="#contact">Contact</a>
+
+            <a href="#student-management">
+                Features
+            </a>
+
+            <a href="#trial">
+                Free Trial
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+            <a href="portal.html" class="nav-portal">
+                Client Portal
+            </a>
+
         </nav>
 
     </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================== -->
 
 <section class="hero">
 
-    <div class="hero-content">
+    <div class="container hero-grid">
 
         <div>
 
+            <span class="eyebrow">
+                CEDARON HILLS BUSINESS SOLUTIONS
+            </span>
+
             <h1>
-                Smart Business Solutions
-                <span>for a Digital Future</span>
+                Technology that makes
+                <span>business management simpler.</span>
             </h1>
 
-            <p>
+            <p class="hero-text">
                 Cedaron Hills Business Solutions develops practical
-                technology solutions that help organizations manage
-                their operations more efficiently.
+                software solutions designed to help organisations
+                manage information, finance, administration and
+                everyday operations more effectively.
             </p>
 
-            <div class="buttons">
+            <div class="button-group">
 
                 <a href="#cedfin" class="btn btn-primary">
                     Explore CedFin
@@ -422,13 +804,121 @@
         </div>
 
 
-        <div class="hero-card">
+        <div class="hero-panel">
 
-            <h2>CedFin School Management System</h2>
+            <div class="hero-panel-top">
+
+                <h2>CedFin</h2>
+
+                <span class="system-status">
+                    School Management
+                </span>
+
+            </div>
 
             <p>
-                Manage students, fees, billing, accounting,
-                academics and reporting from one easy-to-use system.
+                An integrated school management system designed
+                to bring important school operations together.
+            </p>
+
+            <ul class="hero-list">
+
+                <li>Student Management</li>
+
+                <li>Fees &amp; Financial Management</li>
+
+                <li>Academic Management</li>
+
+                <li>Reporting &amp; Administration</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO STRIP
+========================== -->
+
+<div class="intro-strip">
+
+    <div class="container intro-grid">
+
+        <div class="intro-item">
+            <strong>School Management</strong>
+            <span>Integrated school operations</span>
+        </div>
+
+        <div class="intro-item">
+            <strong>Financial Control</strong>
+            <span>Manage financial information</span>
+        </div>
+
+        <div class="intro-item">
+            <strong>Academic Tools</strong>
+            <span>Support academic administration</span>
+        </div>
+
+        <div class="intro-item">
+            <strong>Client Support</strong>
+            <span>Support for Cedaron Hills clients</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-text">
+
+            <span class="eyebrow">
+                ABOUT CEDARON HILLS
+            </span>
+
+            <h2>
+                Practical technology for organisations
+                that want to work smarter.
+            </h2>
+
+            <p>
+                Cedaron Hills Business Solutions focuses on
+                developing practical software solutions that
+                simplify information management and everyday
+                business processes.
+            </p>
+
+            <p>
+                Our solutions are designed around real operational
+                needs, with an emphasis on usability, organisation
+                and better access to information.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                Building useful technology.
+            </h3>
+
+            <p>
+                We believe software should help organisations
+                reduce unnecessary complexity, improve control
+                over information and make important tasks easier
+                to manage.
             </p>
 
         </div>
@@ -438,90 +928,89 @@
 </section>
 
 
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-    <div class="container">
-
-        <div class="about-grid">
-
-            <div>
-
-                <h2>About Cedaron Hills</h2>
-
-                <p>
-                    Cedaron Hills Business Solutions is focused on
-                    developing practical software solutions for
-                    organizations that want to improve the way they
-                    manage information and daily operations.
-                </p>
-
-                <p>
-                    Our approach is to create solutions that are
-                    practical, easy to use and designed around the
-                    real needs of businesses and schools.
-                </p>
-
-            </div>
-
-            <div>
-
-                <h3>Technology that solves real problems.</h3>
-
-                <p>
-                    From financial management to student administration,
-                    our goal is to simplify complex processes and make
-                    important information easier to manage.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CEDFIN -->
+<!-- =========================
+     CEDFIN
+========================== -->
 
 <section class="cedfin" id="cedfin">
 
-    <div class="container">
+    <div class="container cedfin-grid">
 
-        <div class="cedfin-box">
+        <div class="cedfin-content">
 
-            <div>
+            <span class="eyebrow">
+                OUR SCHOOL MANAGEMENT SOLUTION
+            </span>
 
-                <h2>CedFin School Management System</h2>
+            <h2>
+                CedFin School Management System
+            </h2>
 
-                <p>
-                    CedFin brings school administration, student
-                    management, fees and financial management into
-                    one integrated system.
-                </p>
+            <p>
+                CedFin brings student management, financial
+                management, academic administration and reporting
+                together in one integrated system.
+            </p>
 
-                <p>
-                    It is designed for schools that need an easy way
-                    to manage their students, finances and academic
-                    information.
-                </p>
+            <p>
+                It is designed to provide schools with an
+                easy-to-use system for managing important
+                information and everyday operations.
+            </p>
 
-                <a href="#features" class="btn btn-primary">
-                    View Features
+            <div class="button-group">
+
+                <a href="#student-management"
+                   class="btn btn-primary">
+                    Explore Features
+                </a>
+
+                <a href="#trial"
+                   class="btn"
+                   style="border:1px solid #0c3964; color:#0c3964;">
+                    Request a Trial
                 </a>
 
             </div>
 
-            <div>
+        </div>
 
-                <h3>Manage your school in one place</h3>
 
-                <p>
-                    Student records, billing, payments, accounting,
-                    attendance, marks, reports and more.
-                </p>
+        <div class="product-panel">
+
+            <h3>
+                One system for key school operations
+            </h3>
+
+            <div class="product-row">
+
+                <div class="product-icon">S</div>
+
+                <span>Student information and management</span>
+
+            </div>
+
+            <div class="product-row">
+
+                <div class="product-icon">$</div>
+
+                <span>Fees, billing and payments</span>
+
+            </div>
+
+            <div class="product-row">
+
+                <div class="product-icon">A</div>
+
+                <span>Academic administration</span>
+
+            </div>
+
+            <div class="product-row">
+
+                <div class="product-icon">R</div>
+
+                <span>Reports and management information</span>
 
             </div>
 
@@ -532,72 +1021,156 @@
 </section>
 
 
-<!-- FEATURES -->
+<!-- =========================
+     FEATURE 01
+     STUDENT MANAGEMENT
+========================== -->
 
-<section class="features" id="features">
+<section class="student-feature" id="student-management">
 
-    <div class="container">
+    <div class="container student-grid">
 
-        <div class="section-title">
 
-            <h2>CedFin Features</h2>
+        <!-- Visual -->
 
-            <p>
-                Powerful tools designed to help schools manage
-                administration, finance and academics.
+        <div class="feature-visual">
+
+            <div class="profile-header">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <div>
+
+                    <h3>
+                        Student Profile
+                    </h3>
+
+                    <p>
+                        CedFin Student Management
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-row">
+
+                <span>Student</span>
+
+                <strong>Student Record</strong>
+
+            </div>
+
+            <div class="profile-row">
+
+                <span>Class</span>
+
+                <strong>Form / Class</strong>
+
+            </div>
+
+            <div class="profile-row">
+
+                <span>Status</span>
+
+                <strong>Active</strong>
+
+            </div>
+
+            <div class="profile-row">
+
+                <span>Fees</span>
+
+                <strong>Account Information</strong>
+
+            </div>
+
+            <div class="profile-row">
+
+                <span>Statements</span>
+
+                <strong>Available</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Content -->
+
+        <div class="feature-content">
+
+            <span class="eyebrow">
+                CEDFIN FEATURE 01
+            </span>
+
+            <h2>
+                Student Management
+            </h2>
+
+            <p class="feature-description">
+                Keep complete student information organised in
+                one place, making it easier to manage learner
+                records and access important information whenever
+                it is needed.
             </p>
 
-        </div>
 
+            <div class="feature-list">
 
-        <div class="feature-grid">
+                <div>
+                    <span>✓</span>
+                    <p>Student registration and profiles</p>
+                </div>
 
-            <div class="feature-card">
-                <h3>Student Management</h3>
-                <p>
-                    Manage student profiles, classes, enrolment
-                    information and student records.
-                </p>
-            </div>
+                <div>
+                    <span>✓</span>
+                    <p>Personal and contact information</p>
+                </div>
 
-            <div class="feature-card">
-                <h3>Fees & Billing</h3>
-                <p>
-                    Create invoices, record payments, manage arrears
-                    and generate student statements.
-                </p>
-            </div>
+                <div>
+                    <span>✓</span>
+                    <p>Parent and guardian details</p>
+                </div>
 
-            <div class="feature-card">
-                <h3>Accounting</h3>
-                <p>
-                    Manage cash book, income, expenses, accounts
-                    payable and financial reports.
-                </p>
-            </div>
+                <div>
+                    <span>✓</span>
+                    <p>Class allocation</p>
+                </div>
 
-            <div class="feature-card">
-                <h3>Academic Management</h3>
-                <p>
-                    Manage marks, grading, report cards, attendance
-                    and examination information.
-                </p>
-            </div>
+                <div>
+                    <span>✓</span>
+                    <p>Student status</p>
+                </div>
 
-            <div class="feature-card">
-                <h3>Reports</h3>
-                <p>
-                    Access financial, student, fee and management
-                    reports to support better administration.
-                </p>
-            </div>
+                <div>
+                    <span>✓</span>
+                    <p>Fee and payment information</p>
+                </div>
 
-            <div class="feature-card">
-                <h3>Multi-User Access</h3>
-                <p>
-                    Use permissions and user access controls to help
-                    keep school information organized and secure.
-                </p>
+                <div>
+                    <span>✓</span>
+                    <p>Outstanding balances</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Student statements</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Transaction history</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Quick searching and retrieval</p>
+                </div>
+
             </div>
 
         </div>
@@ -607,13 +1180,21 @@
 </section>
 
 
-<!-- FREE TRIAL -->
+<!-- =========================
+     FREE TRIAL
+========================== -->
 
 <section class="trial" id="trial">
 
     <div class="container">
 
-        <h2>Try CedFin Free for 3 Months</h2>
+        <span class="eyebrow">
+            EXPERIENCE CEDFIN
+        </span>
+
+        <h2>
+            Try CedFin Free for 3 Months
+        </h2>
 
         <p>
             Explore CedFin and discover how an integrated school
@@ -621,7 +1202,8 @@
             administration and financial processes.
         </p>
 
-        <a href="#contact" class="btn btn-primary">
+        <a href="#contact"
+           class="btn btn-primary">
             Request Free Trial
         </a>
 
@@ -630,7 +1212,9 @@
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================== -->
 
 <section class="contact" id="contact">
 
@@ -638,21 +1222,25 @@
 
         <div class="contact-box">
 
-            <h2>Contact Cedaron Hills</h2>
+            <span class="eyebrow">
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Interested in CedFin?
+            </h2>
 
             <p>
-                Interested in CedFin or our business solutions?
-            </p>
-
-            <p>
-                Contact us to learn more or request a demonstration.
+                Contact Cedaron Hills Business Solutions to
+                learn more about CedFin, request a demonstration
+                or enquire about a free trial.
             </p>
 
             <br>
 
             <a href="mailto:info@cedaronhills.com"
                class="btn btn-primary">
-                Email Us
+                Contact Cedaron Hills
             </a>
 
         </div>
@@ -662,16 +1250,107 @@
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================== -->
 
 <footer>
 
-    <p>
-        © 2026 Cedaron Hills Business Solutions.
-        All rights reserved.
-    </p>
+    <div class="container footer-grid">
+
+        <div>
+
+            <h3>
+                Cedaron Hills
+            </h3>
+
+            <p>
+                Business technology solutions designed to
+                make organisations work smarter.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Website
+            </h4>
+
+            <a href="#about">About</a>
+
+            <a href="#cedfin">CedFin</a>
+
+            <a href="#student-management">
+                Features
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Client Area
+            </h4>
+
+            <a href="portal.html">
+                Client Portal
+            </a>
+
+            <a href="#trial">
+                Free Trial
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 Cedaron Hills Business Solutions.
+            All rights reserved.
+        </p>
+
+    </div>
 
 </footer>
+
+
+<!-- =========================
+     MOBILE MENU
+========================== -->
+
+<script>
+
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", function () {
+
+        navLinks.classList.toggle("show");
+
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            navLinks.classList.remove("show");
+
+        });
+
+    });
+
+</script>
 
 </body>
 </html>
