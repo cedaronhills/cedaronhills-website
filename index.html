@@ -1375,6 +1375,165 @@
     color: #bae6fd;
     font-size: 12px;
 }
+
+    /* =========================
+   ATTENDANCE MANAGEMENT
+========================== */
+
+.attendance-feature {
+    background: #f8fafc;
+}
+
+.attendance-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.attendance-visual {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(7,26,51,0.08);
+}
+
+.attendance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.attendance-header h3 {
+    color: #071a33;
+    font-size: 21px;
+}
+
+.attendance-date {
+    background: #eff6ff;
+    color: #0369a1;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.attendance-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.attendance-summary div {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.attendance-summary span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.attendance-summary strong {
+    color: #071a33;
+    font-size: 18px;
+}
+
+.attendance-list {
+    border-top: 1px solid #e2e8f0;
+}
+
+.attendance-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.student-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #0369a1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.attendance-student {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.attendance-student strong {
+    color: #071a33;
+    font-size: 13px;
+}
+
+.attendance-student span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.present-badge,
+.absent-badge,
+.late-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.present-badge {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.absent-badge {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.late-badge {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.attendance-footer {
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #071a33;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.attendance-footer strong {
+    font-size: 13px;
+}
+
+.attendance-footer span {
+    color: #bae6fd;
+    font-size: 12px;
+}
         
         /* =========================
            FREE TRIAL
@@ -1519,7 +1678,8 @@
     .payment-grid,
     .statement-grid,
     .accounting-grid,
-    .academic-grid {
+    .academic-grid,
+    .attendance-grid {
         grid-template-columns: 1fr;
     }
            
@@ -3343,6 +3503,234 @@
                     <span>✓</span>
                     <p>Student academic history</p>
                 </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FEATURE 08
+     ATTENDANCE MANAGEMENT
+========================== -->
+
+<section class="attendance-feature" id="attendance">
+
+    <div class="container attendance-grid">
+
+        <!-- Content -->
+
+        <div class="feature-content">
+
+            <span class="eyebrow">
+                CEDFIN FEATURE 08
+            </span>
+
+            <h2>
+                Attendance Management
+            </h2>
+
+            <p class="feature-description">
+                Keep student attendance records organised and easily
+                monitor attendance throughout the school year.
+            </p>
+
+            <div class="feature-list">
+
+                <div>
+                    <span>✓</span>
+                    <p>Record student attendance</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Attendance by class</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Attendance records</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Attendance history</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Monitor student attendance</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Review attendance information</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Visual -->
+
+        <div class="attendance-visual">
+
+            <div class="attendance-header">
+
+                <div>
+                    <span class="small-label">
+                        CLASS ATTENDANCE
+                    </span>
+
+                    <h3>
+                        Form 3
+                    </h3>
+                </div>
+
+                <span class="attendance-date">
+                    Today
+                </span>
+
+            </div>
+
+
+            <div class="attendance-summary">
+
+                <div>
+                    <span>Present</span>
+                    <strong>32</strong>
+                </div>
+
+                <div>
+                    <span>Absent</span>
+                    <strong>3</strong>
+                </div>
+
+                <div>
+                    <span>Late</span>
+                    <strong>2</strong>
+                </div>
+
+            </div>
+
+
+            <div class="attendance-list">
+
+                <div class="attendance-row">
+
+                    <div class="student-avatar">
+                        AM
+                    </div>
+
+                    <div class="attendance-student">
+
+                        <strong>
+                            Student Name
+                        </strong>
+
+                        <span>
+                            Form 3
+                        </span>
+
+                    </div>
+
+                    <span class="present-badge">
+                        Present
+                    </span>
+
+                </div>
+
+
+                <div class="attendance-row">
+
+                    <div class="student-avatar">
+                        BN
+                    </div>
+
+                    <div class="attendance-student">
+
+                        <strong>
+                            Student Name
+                        </strong>
+
+                        <span>
+                            Form 3
+                        </span>
+
+                    </div>
+
+                    <span class="present-badge">
+                        Present
+                    </span>
+
+                </div>
+
+
+                <div class="attendance-row">
+
+                    <div class="student-avatar">
+                        CM
+                    </div>
+
+                    <div class="attendance-student">
+
+                        <strong>
+                            Student Name
+                        </strong>
+
+                        <span>
+                            Form 3
+                        </span>
+
+                    </div>
+
+                    <span class="absent-badge">
+                        Absent
+                    </span>
+
+                </div>
+
+
+                <div class="attendance-row">
+
+                    <div class="student-avatar">
+                        DN
+                    </div>
+
+                    <div class="attendance-student">
+
+                        <strong>
+                            Student Name
+                        </strong>
+
+                        <span>
+                            Form 3
+                        </span>
+
+                    </div>
+
+                    <span class="late-badge">
+                        Late
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="attendance-footer">
+
+                <strong>
+                    Attendance recorded
+                </strong>
+
+                <span>
+                    Class attendance information is kept for review.
+                </span>
 
             </div>
 
