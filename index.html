@@ -1077,6 +1077,151 @@
     border-radius: 6px;
     font-size: 11px;
 }
+
+        /* =========================
+   ACCOUNTING & FINANCIAL MANAGEMENT
+========================== */
+
+.accounting-feature {
+    background: #f8fafc;
+}
+
+.accounting-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.accounting-visual {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(7,26,51,0.08);
+}
+
+.accounting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.accounting-header h3 {
+    color: #071a33;
+    font-size: 21px;
+}
+
+.accounting-status {
+    background: #dcfce7;
+    color: #166534;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.account-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.account-card {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.account-card span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.account-card strong {
+    color: #071a33;
+    font-size: 15px;
+}
+
+.report-list {
+    border-top: 1px solid #e2e8f0;
+}
+
+.report-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.report-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    background: #eff6ff;
+    color: #0369a1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.report-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.report-info strong {
+    color: #071a33;
+    font-size: 13px;
+}
+
+.report-info span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.report-status {
+    color: #166534;
+    background: #dcfce7;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.accounting-footer {
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #071a33;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.accounting-footer strong {
+    font-size: 13px;
+}
+
+.accounting-footer span {
+    color: #bae6fd;
+    font-size: 12px;
+}
+        
         
         /* =========================
            FREE TRIAL
@@ -1213,15 +1358,17 @@
     }
 
     .hero-grid,
-    .about-grid,
-    .cedfin-grid,
-    .student-grid,
-    .class-grid,
-    .billing-grid,
-    .payment-grid,
-    .statement-grid {
-        grid-template-columns: 1fr;
-    }
+.about-grid,
+.cedfin-grid,
+.student-grid,
+.class-grid,
+.billing-grid,
+.payment-grid,
+.statement-grid,
+.accounting-grid {
+    grid-template-columns: 1fr;
+}
+           
     .hero {
         padding: 75px 0;
     }
@@ -2533,6 +2680,285 @@
                     <span>✓</span>
                     <p>WhatsApp student statements</p>
                 </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FEATURE 06
+     ACCOUNTING & FINANCIAL MANAGEMENT
+========================== -->
+
+<section class="accounting-feature" id="accounting">
+
+    <div class="container accounting-grid">
+
+        <!-- Content -->
+
+        <div class="feature-content">
+
+            <span class="eyebrow">
+                CEDFIN FEATURE 06
+            </span>
+
+            <h2>
+                Accounting &amp; Financial Management
+            </h2>
+
+            <p class="feature-description">
+                Keep school financial transactions organised and
+                generate essential accounting reports for better
+                financial control and decision-making.
+            </p>
+
+            <div class="feature-list">
+
+                <div>
+                    <span>✓</span>
+                    <p>Cash book</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Income and expenditure</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Accounts receivable</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Accounts payable</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>General ledger</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Trial balance</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Income statement</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Balance sheet</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Cash flow reporting</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Bank reconciliation</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Budgeting</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Other income and expenses</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Financial reports</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Multi-currency accounting</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Visual -->
+
+        <div class="accounting-visual">
+
+            <div class="accounting-header">
+
+                <div>
+                    <span class="small-label">
+                        CEDFIN FINANCE
+                    </span>
+
+                    <h3>
+                        Financial Overview
+                    </h3>
+                </div>
+
+                <span class="accounting-status">
+                    Current
+                </span>
+
+            </div>
+
+
+            <div class="account-summary">
+
+                <div class="account-card">
+
+                    <span>
+                        Cash &amp; Bank
+                    </span>
+
+                    <strong>
+                        US$ 12,450.00
+                    </strong>
+
+                </div>
+
+                <div class="account-card">
+
+                    <span>
+                        Accounts Receivable
+                    </span>
+
+                    <strong>
+                        US$ 8,750.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-list">
+
+                <div class="report-row">
+
+                    <div class="report-icon">
+                        TB
+                    </div>
+
+                    <div class="report-info">
+
+                        <strong>
+                            Trial Balance
+                        </strong>
+
+                        <span>
+                            Accounting balances
+                        </span>
+
+                    </div>
+
+                    <span class="report-status">
+                        Ready
+                    </span>
+
+                </div>
+
+
+                <div class="report-row">
+
+                    <div class="report-icon">
+                        IS
+                    </div>
+
+                    <div class="report-info">
+
+                        <strong>
+                            Income Statement
+                        </strong>
+
+                        <span>
+                            Income and expenditure
+                        </span>
+
+                    </div>
+
+                    <span class="report-status">
+                        Ready
+                    </span>
+
+                </div>
+
+
+                <div class="report-row">
+
+                    <div class="report-icon">
+                        BS
+                    </div>
+
+                    <div class="report-info">
+
+                        <strong>
+                            Balance Sheet
+                        </strong>
+
+                        <span>
+                            Financial position
+                        </span>
+
+                    </div>
+
+                    <span class="report-status">
+                        Ready
+                    </span>
+
+                </div>
+
+
+                <div class="report-row">
+
+                    <div class="report-icon">
+                        CF
+                    </div>
+
+                    <div class="report-info">
+
+                        <strong>
+                            Cash Flow
+                        </strong>
+
+                        <span>
+                            Cash movement
+                        </span>
+
+                    </div>
+
+                    <span class="report-status">
+                        Ready
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="accounting-footer">
+
+                <strong>
+                    Financial control in one system
+                </strong>
+
+                <span>
+                    Monitor transactions and generate essential
+                    accounting reports.
+                </span>
 
             </div>
 
