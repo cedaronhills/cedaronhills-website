@@ -515,6 +515,116 @@
             font-weight: bold;
         }
 
+                /* =========================
+           CLASS & ENROLMENT
+        ========================== */
+
+        .class-feature {
+            background: #f8fafc;
+        }
+
+        .class-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .class-visual {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 18px 40px rgba(7,26,51,0.08);
+        }
+
+        .class-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .small-label {
+            display: block;
+            color: #64748b;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            margin-bottom: 5px;
+        }
+
+        .class-header h3 {
+            color: #071a33;
+            font-size: 21px;
+        }
+
+        .class-badge {
+            background: #dcfce7;
+            color: #166534;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 10px;
+            border-radius: 20px;
+        }
+
+        .class-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .class-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 10px;
+            background: #eff6ff;
+            color: #0369a1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .class-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .class-info strong {
+            color: #071a33;
+            font-size: 14px;
+        }
+
+        .class-info span {
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .rollover-box {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 10px;
+            background: #071a33;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .rollover-box strong {
+            font-size: 13px;
+        }
+
+        .rollover-box span {
+            color: #bae6fd;
+            font-size: 12px;
+        }
 
         /* =========================
            FREE TRIAL
@@ -618,98 +728,99 @@
            MOBILE
         ========================== */
 
-        @media (max-width: 850px) {
+       @media (max-width: 850px) {
 
-            .menu-button {
-                display: block;
-            }
+    .menu-button {
+        display: block;
+    }
 
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 76px;
-                left: 0;
-                right: 0;
-                background: #071a33;
-                padding: 20px 5%;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: #071a33;
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
 
-            .nav-links.show {
-                display: flex;
-            }
+    .nav-links.show {
+        display: flex;
+    }
 
-            .nav-links a {
-                padding: 12px 0;
-            }
+    .nav-links a {
+        padding: 12px 0;
+    }
 
-            .nav-portal {
-                text-align: center;
-            }
+    .nav-portal {
+        text-align: center;
+    }
 
-            .hero-grid,
-            .about-grid,
-            .cedfin-grid,
-            .student-grid {
-                grid-template-columns: 1fr;
-            }
+    .hero-grid,
+    .about-grid,
+    .cedfin-grid,
+    .student-grid,
+    .class-grid {
+        grid-template-columns: 1fr;
+    }
 
-            .hero {
-                padding: 75px 0;
-            }
+    .hero {
+        padding: 75px 0;
+    }
 
-            .hero-panel {
-                padding: 25px;
-            }
+    .hero-panel {
+        padding: 25px;
+    }
 
-            .intro-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+    .intro-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
-            .intro-item:nth-child(2) {
-                border-right: none;
-            }
+    .intro-item:nth-child(2) {
+        border-right: none;
+    }
 
-            .intro-item:nth-child(-n+2) {
-                border-bottom: 1px solid #e2e8f0;
-            }
+    .intro-item:nth-child(-n+2) {
+        border-bottom: 1px solid #e2e8f0;
+    }
 
-            .feature-list {
-                grid-template-columns: 1fr;
-            }
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
 
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
 
-        @media (max-width: 520px) {
+@media (max-width: 520px) {
 
-            .hero h1 {
-                font-size: 39px;
-            }
+    .hero h1 {
+        font-size: 39px;
+    }
 
-            .intro-grid {
-                grid-template-columns: 1fr;
-            }
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
 
-            .intro-item {
-                border-right: none;
-                border-bottom: 1px solid #e2e8f0;
-            }
+    .intro-item {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
 
-            .intro-item:last-child {
-                border-bottom: none;
-            }
+    .intro-item:last-child {
+        border-bottom: none;
+    }
 
-            section {
-                padding: 70px 0;
-            }
-        }
+    section {
+        padding: 70px 0;
+    }
+}
     </style>
 </head>
 
