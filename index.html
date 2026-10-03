@@ -773,6 +773,151 @@
     font-size: 12px;
 }
 
+    /* =========================
+   PAYMENTS & RECEIPTING
+========================== */
+
+.payment-feature {
+    background: #f8fafc;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.payment-visual {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(7,26,51,0.08);
+}
+
+.payment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.payment-header h3 {
+    color: #071a33;
+    font-size: 21px;
+}
+
+.payment-status {
+    background: #dcfce7;
+    color: #166534;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.receipt-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.receipt-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.receipt-details span,
+.payment-reference span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.receipt-details strong,
+.payment-reference strong {
+    color: #071a33;
+    font-size: 13px;
+}
+
+.payment-amount {
+    padding: 20px;
+    border-radius: 12px;
+    background: #eff6ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.payment-amount span {
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.payment-amount strong {
+    color: #0369a1;
+    font-size: 21px;
+}
+
+.payment-reference {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.payment-allocation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.payment-allocation div {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.payment-allocation span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.payment-allocation strong {
+    color: #071a33;
+    font-size: 14px;
+}
+
+.receipt-footer {
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #071a33;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.receipt-footer strong {
+    font-size: 13px;
+}
+
+.receipt-footer span {
+    color: #bae6fd;
+    font-size: 12px;
+}
+
         /* =========================
            FREE TRIAL
         ========================== */
@@ -912,7 +1057,8 @@
     .cedfin-grid,
     .student-grid,
     .class-grid,
-    .billing-grid {
+    .billing-grid,
+    .payment-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1822,6 +1968,212 @@
                     <span>✓</span>
                     <p>Email invoices and statements</p>
                 </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FEATURE 04
+     PAYMENTS & RECEIPTING
+========================== -->
+
+<section class="payment-feature" id="payments-receipting">
+
+    <div class="container payment-grid">
+
+        <!-- Content -->
+
+        <div class="feature-content">
+
+            <span class="eyebrow">
+                CEDFIN FEATURE 04
+            </span>
+
+            <h2>
+                Payments &amp; Receipting
+            </h2>
+
+            <p class="feature-description">
+                Record student payments accurately and keep a clear
+                history of amounts received, payment methods and
+                transactions.
+            </p>
+
+            <div class="feature-list">
+
+                <div>
+                    <span>✓</span>
+                    <p>Record student payments</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Payment receipts</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Payment methods</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Payment references</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Payment dates</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Amounts received</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Payment history</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Student transaction history</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Payment allocation to student accounts</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Multi-currency payments</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Payment audit trail</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Visual -->
+
+        <div class="payment-visual">
+
+            <div class="payment-header">
+
+                <div>
+                    <span class="small-label">
+                        PAYMENT RECEIPT
+                    </span>
+
+                    <h3>
+                        Payment Received
+                    </h3>
+                </div>
+
+                <span class="payment-status">
+                    Paid
+                </span>
+
+            </div>
+
+
+            <div class="receipt-details">
+
+                <div>
+                    <span>Student</span>
+                    <strong>Student Name</strong>
+                </div>
+
+                <div>
+                    <span>Receipt No.</span>
+                    <strong>RCT-0001</strong>
+                </div>
+
+                <div>
+                    <span>Payment Date</span>
+                    <strong>04 Oct 2026</strong>
+                </div>
+
+                <div>
+                    <span>Payment Method</span>
+                    <strong>Bank</strong>
+                </div>
+
+            </div>
+
+
+            <div class="payment-amount">
+
+                <span>
+                    Amount Received
+                </span>
+
+                <strong>
+                    US$ 400.00
+                </strong>
+
+            </div>
+
+
+            <div class="payment-reference">
+
+                <span>
+                    Reference
+                </span>
+
+                <strong>
+                    PAY-0001
+                </strong>
+
+            </div>
+
+
+            <div class="payment-allocation">
+
+                <div>
+                    <span>
+                        Allocated to Student Account
+                    </span>
+
+                    <strong>
+                        US$ 400.00
+                    </strong>
+                </div>
+
+                <div>
+                    <span>
+                        Remaining Balance
+                    </span>
+
+                    <strong>
+                        US$ 150.00
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="receipt-footer">
+
+                <strong>
+                    Payment recorded successfully
+                </strong>
+
+                <span>
+                    Transaction history updated.
+                </span>
 
             </div>
 
