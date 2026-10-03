@@ -7,26 +7,42 @@
     <title>Cedaron Hills Business Solutions</title>
 
     <meta name="description"
-          content="Cedaron Hills Business Solutions provides practical software solutions for schools and businesses.">
+          content="Cedaron Hills Business Solutions provides practical technology solutions for schools and businesses, including the CedFin School Management System.">
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            color: #222;
-            background: #f7f9fc;
+            color: #1f2937;
+            background: #ffffff;
         }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
 
         header {
             background: #0b1f3a;
             color: white;
-            padding: 20px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,101 +53,315 @@
             font-weight: bold;
         }
 
+        .logo span {
+            color: #38bdf8;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
+            font-size: 15px;
         }
 
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
         .hero {
-            background: #0b1f3a;
+            background: linear-gradient(135deg, #0b1f3a, #123e6b);
             color: white;
-            padding: 90px 7%;
-            text-align: center;
+            padding: 100px 25px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
         }
 
         .hero p {
-            max-width: 700px;
-            margin: 0 auto 30px;
             font-size: 19px;
+            color: #dbeafe;
+            margin-bottom: 30px;
+            max-width: 650px;
         }
 
-        .button {
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
             display: inline-block;
-            background: #ffffff;
-            color: #0b1f3a;
-            padding: 14px 28px;
-            border-radius: 6px;
+            padding: 13px 24px;
+            border-radius: 7px;
             text-decoration: none;
             font-weight: bold;
         }
 
+        .btn-primary {
+            background: #38bdf8;
+            color: #082f49;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #0b1f3a;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 35px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-card h2 {
+            margin-bottom: 15px;
+        }
+
+        .hero-card p {
+            font-size: 16px;
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
         section {
-            padding: 60px 7%;
+            padding: 80px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .feature {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        .feature h3 {
-            margin-bottom: 10px;
+            font-size: 36px;
             color: #0b1f3a;
+            margin-bottom: 12px;
         }
 
-        .about {
-            background: white;
-            text-align: center;
-        }
-
-        .about p {
-            max-width: 800px;
+        .section-title p {
+            color: #64748b;
+            max-width: 700px;
             margin: auto;
         }
 
-        footer {
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: #f8fafc;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about h2 {
+            color: #0b1f3a;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            margin-bottom: 15px;
+            color: #475569;
+        }
+
+        /* =========================
+           CEDFIN
+        ========================== */
+
+        .cedfin {
+            background: white;
+        }
+
+        .cedfin-box {
+            background: #eff6ff;
+            border-radius: 18px;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .cedfin-box h2 {
+            font-size: 36px;
+            color: #0b1f3a;
+            margin-bottom: 20px;
+        }
+
+        .cedfin-box p {
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           FEATURES
+        ========================== */
+
+        .features {
+            background: #f8fafc;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .feature-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        /* =========================
+           FREE TRIAL
+        ========================== */
+
+        .trial {
             background: #0b1f3a;
             color: white;
             text-align: center;
-            padding: 25px;
         }
 
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+        .trial h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
 
-            nav a {
-                margin: 0 8px;
+        .trial p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #dbeafe;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-box {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-box h2 {
+            color: #0b1f3a;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #061426;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .hero-content,
+            .about-grid,
+            .cedfin-box {
+                grid-template-columns: 1fr;
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 40px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .cedfin-box {
+                padding: 30px;
             }
         }
     </style>
@@ -140,115 +370,308 @@
 <body>
 
 <header>
-    <div class="logo">Cedaron Hills</div>
+    <div class="navbar">
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#cedfin">CedFin</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <div class="logo">
+            Cedaron <span>Hills</span>
+        </div>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#cedfin">CedFin</a>
+            <a href="#features">Features</a>
+            <a href="#trial">Free Trial</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
-    <h1>Smart Business Solutions</h1>
 
-    <p>
-        Practical software solutions designed to help schools
-        and businesses manage their operations more effectively.
-    </p>
+    <div class="hero-content">
 
-    <a href="#cedfin" class="button">Explore CedFin</a>
-</section>
+        <div>
 
-<section id="about" class="about">
-    <div class="section-title">
-        <h2>About Cedaron Hills</h2>
+            <h1>
+                Smart Business Solutions
+                <span>for a Digital Future</span>
+            </h1>
+
+            <p>
+                Cedaron Hills Business Solutions develops practical
+                technology solutions that help organizations manage
+                their operations more efficiently.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#cedfin" class="btn btn-primary">
+                    Explore CedFin
+                </a>
+
+                <a href="#trial" class="btn btn-outline">
+                    Start Free Trial
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <h2>CedFin School Management System</h2>
+
+            <p>
+                Manage students, fees, billing, accounting,
+                academics and reporting from one easy-to-use system.
+            </p>
+
+        </div>
+
     </div>
 
-    <p>
-        Cedaron Hills Business Solutions develops practical,
-        user-friendly software designed to simplify everyday
-        business and school administration.
-    </p>
 </section>
 
-<section id="cedfin">
-    <div class="section-title">
-        <h2>CedFin School Management System</h2>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div>
+
+                <h2>About Cedaron Hills</h2>
+
+                <p>
+                    Cedaron Hills Business Solutions is focused on
+                    developing practical software solutions for
+                    organizations that want to improve the way they
+                    manage information and daily operations.
+                </p>
+
+                <p>
+                    Our approach is to create solutions that are
+                    practical, easy to use and designed around the
+                    real needs of businesses and schools.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Technology that solves real problems.</h3>
+
+                <p>
+                    From financial management to student administration,
+                    our goal is to simplify complex processes and make
+                    important information easier to manage.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CEDFIN -->
+
+<section class="cedfin" id="cedfin">
+
+    <div class="container">
+
+        <div class="cedfin-box">
+
+            <div>
+
+                <h2>CedFin School Management System</h2>
+
+                <p>
+                    CedFin brings school administration, student
+                    management, fees and financial management into
+                    one integrated system.
+                </p>
+
+                <p>
+                    It is designed for schools that need an easy way
+                    to manage their students, finances and academic
+                    information.
+                </p>
+
+                <a href="#features" class="btn btn-primary">
+                    View Features
+                </a>
+
+            </div>
+
+            <div>
+
+                <h3>Manage your school in one place</h3>
+
+                <p>
+                    Student records, billing, payments, accounting,
+                    attendance, marks, reports and more.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features" id="features">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>CedFin Features</h2>
+
+            <p>
+                Powerful tools designed to help schools manage
+                administration, finance and academics.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Student Management</h3>
+                <p>
+                    Manage student profiles, classes, enrolment
+                    information and student records.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Fees & Billing</h3>
+                <p>
+                    Create invoices, record payments, manage arrears
+                    and generate student statements.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Accounting</h3>
+                <p>
+                    Manage cash book, income, expenses, accounts
+                    payable and financial reports.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Academic Management</h3>
+                <p>
+                    Manage marks, grading, report cards, attendance
+                    and examination information.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Reports</h3>
+                <p>
+                    Access financial, student, fee and management
+                    reports to support better administration.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Multi-User Access</h3>
+                <p>
+                    Use permissions and user access controls to help
+                    keep school information organized and secure.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FREE TRIAL -->
+
+<section class="trial" id="trial">
+
+    <div class="container">
+
+        <h2>Try CedFin Free for 3 Months</h2>
 
         <p>
-            A comprehensive solution for managing school
-            administration, finance and academic activities.
+            Explore CedFin and discover how an integrated school
+            management system can simplify your school's daily
+            administration and financial processes.
         </p>
-    </div>
 
-    <div class="features">
-
-        <div class="feature">
-            <h3>Student Management</h3>
-            <p>
-                Manage student profiles, classes, enrolment
-                and academic information.
-            </p>
-        </div>
-
-        <div class="feature">
-            <h3>Fees & Billing</h3>
-            <p>
-                Manage fees, invoices, payments, arrears
-                and student statements.
-            </p>
-        </div>
-
-        <div class="feature">
-            <h3>Accounting</h3>
-            <p>
-                Manage income, expenses, suppliers,
-                reports and financial records.
-            </p>
-        </div>
-
-        <div class="feature">
-            <h3>Academic Management</h3>
-            <p>
-                Manage marks, grading, attendance,
-                examinations and report cards.
-            </p>
-        </div>
-
-        <div class="feature">
-            <h3>Reports</h3>
-            <p>
-                Generate financial, student and
-                administrative reports.
-            </p>
-        </div>
-
-        <div class="feature">
-            <h3>Communication</h3>
-            <p>
-                Support communication with parents and
-                school stakeholders through modern channels.
-            </p>
-        </div>
+        <a href="#contact" class="btn btn-primary">
+            Request Free Trial
+        </a>
 
     </div>
+
 </section>
 
-<section id="contact" class="about">
-    <div class="section-title">
-        <h2>Contact Cedaron Hills</h2>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>Contact Cedaron Hills</h2>
+
+            <p>
+                Interested in CedFin or our business solutions?
+            </p>
+
+            <p>
+                Contact us to learn more or request a demonstration.
+            </p>
+
+            <br>
+
+            <a href="mailto:info@cedaronhills.com"
+               class="btn btn-primary">
+                Email Us
+            </a>
+
+        </div>
+
     </div>
 
-    <p>
-        Interested in CedFin or our software solutions?
-        Contact Cedaron Hills Business Solutions to learn more.
-    </p>
 </section>
+
+
+<!-- FOOTER -->
 
 <footer>
-    <p>© 2026 Cedaron Hills Business Solutions</p>
+
+    <p>
+        © 2026 Cedaron Hills Business Solutions.
+        All rights reserved.
+    </p>
+
 </footer>
 
 </body>
-  </html>
+</html>
