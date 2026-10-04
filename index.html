@@ -1651,27 +1651,7 @@
     }
 }
         
-        /* =========================
-           FREE TRIAL
-        ========================== */
-
-        .trial {
-            background: linear-gradient(135deg, #071a33, #0c3964);
-            color: white;
-            text-align: center;
-        }
-
-        .trial h2 {
-            font-size: clamp(32px, 4vw, 45px);
-            margin-bottom: 15px;
-        }
-
-        .trial p {
-            color: #dbeafe;
-            max-width: 700px;
-            margin: 0 auto 28px;
-        }
-
+      
 
         /* =========================
            CONTACT
@@ -1886,13 +1866,13 @@
             <a href="#features">Features</a>
             </a>
 
-            <a href="#trial">
-                Free Trial
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
+        <a href="#contact">
+            Free Trial
+        </a>
+        
+        <a href="#contact">
+            Contact
+        </a>
 
         </nav>
 
@@ -1932,9 +1912,9 @@
                     Explore CedFin
                 </a>
 
-                <a href="#trial" class="btn btn-outline">
-                    Start Free Trial
-                </a>
+            <a href="#contact" class="btn btn-outline">
+                Start Free Trial
+            </a>
 
             </div>
 
@@ -2102,11 +2082,11 @@
                     Explore Features
                 </a>
 
-                <a href="#trial"
-                   class="btn"
-                   style="border:1px solid #0c3964; color:#0c3964;">
-                    Request a Trial
-                </a>
+        <a href="#contact"
+           class="btn"
+           style="border:1px solid #0c3964; color:#0c3964;">
+            Request a Trial
+        </a>
 
             </div>
 
@@ -2277,7 +2257,7 @@
                 throughout the school year.
             </p>
 
-            <a href="#trial" class="btn btn-primary">
+            <a href="#contact" class="btn btn-primary">
                 Experience CedFin
             </a>
 
@@ -2376,7 +2356,7 @@
                 through the school.
             </p>
 
-            <a href="#trial" class="btn btn-primary">
+            <a href="#contact" class="btn btn-primary">
                 Experience CedFin
             </a>
 
@@ -2417,7 +2397,7 @@
                 school a clearer view of its fee position.
             </p>
 
-            <a href="#trial" class="btn btn-primary">
+            <a href="#contact" class="btn btn-primary">
                 Experience CedFin
             </a>
 
@@ -2515,7 +2495,7 @@
                 student accounts up to date throughout the school year.
             </p>
 
-            <a href="#trial" class="btn btn-primary">
+            <a href="#contact" class="btn btn-primary">
                 Experience CedFin
             </a>
 
@@ -2556,7 +2536,7 @@
                 making communication with parents and guardians easier.
             </p>
 
-            <a href="#trial" class="btn btn-primary">
+            <a href="#contact" class="btn btn-primary">
                 Experience CedFin
             </a>
 
@@ -2656,7 +2636,7 @@
                 decision-making.
             </p>
 
-            <a href="#trial" class="btn btn-primary">
+            <a href="#contact" class="btn btn-primary">
                 Experience CedFin
             </a>
 
@@ -2698,7 +2678,7 @@
                 meaningful academic records.
             </p>
 
-            <a href="#trial" class="btn btn-primary">
+            <a href="#contact" class="btn btn-primary">
                 Experience CedFin
             </a>
 
@@ -2797,7 +2777,7 @@
                 student management system for easier administration.
             </p>
 
-            <a href="#trial" class="btn btn-primary">
+            <a href="#contact" class="btn btn-primary">
                 Experience CedFin
             </a>
 
@@ -2811,37 +2791,14 @@
      FREE TRIAL
 ========================== -->
 
-<section class="trial" id="trial">
-
-    <div class="container">
-
-        <span class="eyebrow">
-            3 MONTHS FREE
-        </span>
-
-        <h2>
-            Experience CedFin in Your School
-        </h2>
-
-        <p>
-            Try CedFin free for 3 months and see how an easy-to-use
-            school management system can simplify student records,
-            fees, accounting, academics and everyday administration.
-        </p>
-
-        <a href="#contact" class="btn btn-primary">
-            Request Your Free Trial
-        </a>
-
-    </div>
-
-</section>
     
 <!-- =========================
      CONTACT
 ========================== -->
 
 <section class="contact" id="contact">
+
+   <section class="contact" id="contact">
 
     <div class="container">
 
@@ -2852,24 +2809,109 @@
             </span>
 
             <h2>
-                Let's Talk About Your School
+                Send Us a Message
             </h2>
 
             <p>
-                Interested in CedFin or ready to experience it for
-                yourself? Contact Cedaron Hills Business Solutions
-                to request a demonstration, ask questions or start
-                your 3-month free trial.
+                Fill out the form below and our team will get back
+                to you within 24 hours.
             </p>
 
-            <div class="button-group">
 
-                <a href="mailto:info@cedaronhills.com"
-                   class="btn btn-primary">
-                    Email Us
-                </a>
+            <form
+                action="https://formspree.io/f/xwlveany"
+                method="POST"
+                class="contact-form"
+            >
 
-            </div>
+                <div class="form-group">
+                    <label for="name">
+                        Full Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Jack Mendes"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="email">
+                        Email Address *
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="mendes@company.co.zw"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+263 77 123 4567"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="company">
+                        School / Organisation
+                    </label>
+
+                    <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        placeholder="Your school or organisation"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="message">
+                        Message *
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="Tell us how we can help..."
+                        required
+                    ></textarea>
+                </div>
+
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New CedFin Website Enquiry"
+                >
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Send Message
+                </button>
+
+            </form>
 
         </div>
 
@@ -2920,18 +2962,6 @@
 
         </div>
 
-
-        <div>
-
-            <h4>
-                Client Area
-            </h4>
-
-            <a href="#trial">
-                Free Trial
-            </a>
-
-        </div>
 
     </div>
 
