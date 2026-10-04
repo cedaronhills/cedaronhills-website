@@ -3062,6 +3062,62 @@
     });
 
 </script>
+<script>
 
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const submitButton = document.getElementById("submitButton");
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    const formData = new FormData(contactForm);
+
+    try {
+
+        const response = await fetch(
+            contactForm.action,
+            {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            }
+        );
+
+        if (response.ok) {
+
+            window.location.href = "thank-you.html";
+
+        } else {
+
+            submitButton.disabled = false;
+            submitButton.textContent = "Send Message";
+
+            alert(
+                "There was a problem sending your message. Please try again."
+            );
+
+        }
+
+    } catch (error) {
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+
+        alert(
+            "There was a connection problem. Please try again."
+        );
+
+    }
+
+});
+
+</script>
 </body>
 </html>
