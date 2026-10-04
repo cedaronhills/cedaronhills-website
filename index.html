@@ -2844,10 +2844,7 @@
 <!-- =========================
      CONTACT
 ========================== -->
-
 <section class="contact" id="contact">
-
-   <section class="contact" id="contact">
 
     <div class="container">
 
@@ -2866,22 +2863,15 @@
                 to you within 24 hours.
             </p>
 
-
-    <form
-        action="https://formspree.io/f/xwlveany"
-        method="POST"
-        class="contact-form"
-    >
-    
-        <input
-            type="hidden"
-            name="_next"
-            value="https://cedaronhills-website.pages.dev/thank-you.html"
-    >
-
-    <div class="form-group">
+            <form
+                action="https://formspree.io/f/xwlveany"
+                method="POST"
+                class="contact-form"
+                id="contactForm"
+            >
 
                 <div class="form-group">
+
                     <label for="name">
                         Full Name *
                     </label>
@@ -2893,10 +2883,12 @@
                         placeholder="Jack Mendes"
                         required
                     >
+
                 </div>
 
 
                 <div class="form-group">
+
                     <label for="email">
                         Email Address *
                     </label>
@@ -2908,10 +2900,12 @@
                         placeholder="mendes@company.co.zw"
                         required
                     >
+
                 </div>
 
 
                 <div class="form-group">
+
                     <label for="phone">
                         Phone Number
                     </label>
@@ -2922,10 +2916,12 @@
                         name="phone"
                         placeholder="+263 77 123 4567"
                     >
+
                 </div>
 
 
                 <div class="form-group">
+
                     <label for="company">
                         School / Organisation
                     </label>
@@ -2936,10 +2932,12 @@
                         name="company"
                         placeholder="Your school or organisation"
                     >
+
                 </div>
 
 
                 <div class="form-group">
+
                     <label for="message">
                         Message *
                     </label>
@@ -2951,6 +2949,7 @@
                         placeholder="Tell us how we can help..."
                         required
                     ></textarea>
+
                 </div>
 
 
@@ -2964,6 +2963,7 @@
                 <button
                     type="submit"
                     class="btn btn-primary"
+                    id="submitButton"
                 >
                     Send Message
                 </button>
