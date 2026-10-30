@@ -1,3123 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Cedaron Hills Business Solutions | CedFin</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta name="description" content="CedFin is an easy-to-use school management system for managing students, fees, accounting, academics, attendance and school administration.">
-
-    <meta name="description"
-          content="Cedaron Hills Business Solutions develops practical technology solutions, including CedFin School Management System.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #1e293b;
-            background: #ffffff;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1180px, 92%);
-            margin: auto;
-        }
-
-
-        /* =========================
-           NAVIGATION
-        ========================== */
-
-        header {
-            background: #071a33;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-        }
-
-        .navbar {
-            min-height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            color: white;
-            font-size: 21px;
-            font-weight: 800;
-            letter-spacing: 0.3px;
-        }
-
-        .logo span {
-            color: #38bdf8;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
-
-        .nav-links a {
-            color: #e2e8f0;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #38bdf8;
-        }
-
-        .nav-portal {
-            background: #38bdf8;
-            color: #06233d !important;
-            padding: 10px 17px;
-            border-radius: 7px;
-        }
-
-        .nav-portal:hover {
-            background: #7dd3fc;
-        }
-
-        .menu-button {
-            display: none;
-            border: none;
-            background: transparent;
-            color: white;
-            font-size: 27px;
-            cursor: pointer;
-        }
-
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero {
-            background:
-                radial-gradient(circle at 80% 20%, rgba(56,189,248,0.18), transparent 30%),
-                linear-gradient(135deg, #071a33, #0c3964);
-
-            color: white;
-            padding: 105px 0 95px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 65px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            color: #38bdf8;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.8px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 5vw, 65px);
-            line-height: 1.08;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #38bdf8;
-        }
-
-        .hero-text {
-            color: #dbeafe;
-            font-size: 18px;
-            max-width: 650px;
-            margin-bottom: 32px;
-        }
-
-        .button-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 13px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 22px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 700;
-            transition: 0.2s;
-        }
-
-        .btn-primary {
-            background: #38bdf8;
-            color: #06233d;
-        }
-
-        .btn-primary:hover {
-            background: #7dd3fc;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255,255,255,0.55);
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: #071a33;
-        }
-
-        .hero-panel {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 18px;
-            padding: 32px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
-        }
-
-        .hero-panel-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.12);
-            margin-bottom: 22px;
-        }
-
-        .hero-panel h2 {
-            font-size: 23px;
-        }
-
-        .system-status {
-            font-size: 11px;
-            background: rgba(34,197,94,0.15);
-            color: #86efac;
-            padding: 6px 10px;
-            border-radius: 20px;
-        }
-
-        .hero-panel p {
-            color: #dbeafe;
-            font-size: 15px;
-            margin-bottom: 22px;
-        }
-
-        .hero-list {
-            list-style: none;
-        }
-
-        .hero-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            color: #e2e8f0;
-            font-size: 14px;
-        }
-
-        .hero-list li:last-child {
-            border-bottom: none;
-        }
-
-        .hero-list li::before {
-            content: "✓";
-            color: #38bdf8;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-
-        /* =========================
-           INTRO STRIP
-        ========================== */
-
-        .intro-strip {
-            background: #f8fafc;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .intro-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .intro-item {
-            padding: 25px 20px;
-            text-align: center;
-            border-right: 1px solid #e2e8f0;
-        }
-
-        .intro-item:last-child {
-            border-right: none;
-        }
-
-        .intro-item strong {
-            display: block;
-            color: #071a33;
-            font-size: 15px;
-            margin-bottom: 4px;
-        }
-
-        .intro-item span {
-            color: #64748b;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================== */
-
-        section {
-            padding: 90px 0;
-        }
-
-        .section-heading {
-            max-width: 720px;
-            margin-bottom: 45px;
-        }
-
-        .section-heading.center {
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        .section-heading h2 {
-            color: #071a33;
-            font-size: clamp(32px, 4vw, 45px);
-            line-height: 1.15;
-            margin-bottom: 15px;
-        }
-
-        .section-heading p {
-            color: #64748b;
-            font-size: 16px;
-        }
-
-        .about {
-            background: white;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 65px;
-            align-items: center;
-        }
-
-        .about-text p {
-            color: #475569;
-            margin-bottom: 18px;
-        }
-
-        .about-card {
-            background: #eff6ff;
-            border: 1px solid #dbeafe;
-            border-radius: 18px;
-            padding: 35px;
-        }
-
-        .about-card h3 {
-            color: #071a33;
-            font-size: 23px;
-            margin-bottom: 12px;
-        }
-
-        .about-card p {
-            color: #475569;
-        }
-
-
-        /* =========================
-           CEDFIN INTRO
-        ========================== */
-
-        .cedfin {
-            background: #f8fafc;
-        }
-
-        .cedfin-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 55px;
-            align-items: center;
-        }
-
-        .cedfin-content h2 {
-            color: #071a33;
-            font-size: 40px;
-            line-height: 1.15;
-            margin-bottom: 20px;
-        }
-
-        .cedfin-content p {
-            color: #475569;
-            margin-bottom: 18px;
-        }
-
-        .product-panel {
-            background: #071a33;
-            color: white;
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 20px 45px rgba(7,26,51,0.18);
-        }
-
-        .product-panel h3 {
-            font-size: 25px;
-            margin-bottom: 20px;
-        }
-
-        .product-row {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            color: #dbeafe;
-            font-size: 14px;
-        }
-
-        .product-row:last-child {
-            border-bottom: none;
-        }
-
-        .product-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            background: rgba(56,189,248,0.14);
-            color: #38bdf8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           STUDENT MANAGEMENT
-        ========================== */
-
-        .student-feature {
-            background: white;
-        }
-
-        .student-grid {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 65px;
-            align-items: center;
-        }
-
-        .feature-visual {
-            background: linear-gradient(145deg, #071a33, #0d4774);
-            border-radius: 20px;
-            padding: 30px;
-            color: white;
-            box-shadow: 0 20px 45px rgba(7,26,51,0.16);
-        }
-
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding-bottom: 22px;
-            border-bottom: 1px solid rgba(255,255,255,0.12);
-            margin-bottom: 20px;
-        }
-
-        .avatar {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: #38bdf8;
-            color: #06233d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .profile-header h3 {
-            font-size: 18px;
-        }
-
-        .profile-header p {
-            color: #bae6fd;
-            font-size: 12px;
-        }
-
-        .profile-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 13px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            font-size: 13px;
-        }
-
-        .profile-row span {
-            color: #bae6fd;
-        }
-
-        .profile-row strong {
-            color: white;
-        }
-
-        .feature-content h2 {
-            color: #071a33;
-            font-size: 39px;
-            margin-bottom: 15px;
-        }
-
-        .feature-description {
-            color: #475569;
-            font-size: 17px;
-            margin-bottom: 25px;
-        }
-
-        .feature-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 25px;
-            margin-bottom: 30px;
-        }
-
-        .feature-list div {
-            display: flex;
-            gap: 9px;
-            color: #475569;
-            font-size: 14px;
-        }
-
-        .feature-list span {
-            color: #0284c7;
-            font-weight: bold;
-        }
-
-                /* =========================
-           CLASS & ENROLMENT
-        ========================== */
-
-        .class-feature {
-            background: #f8fafc;
-        }
-
-        .class-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 65px;
-            align-items: center;
-        }
-
-        .class-visual {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 28px;
-            box-shadow: 0 18px 40px rgba(7,26,51,0.08);
-        }
-
-        .class-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 20px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .small-label {
-            display: block;
-            color: #64748b;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 1.2px;
-            margin-bottom: 5px;
-        }
-
-        .class-header h3 {
-            color: #071a33;
-            font-size: 21px;
-        }
-
-        .class-badge {
-            background: #dcfce7;
-            color: #166534;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 6px 10px;
-            border-radius: 20px;
-        }
-
-        .class-row {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 15px 0;
-            border-bottom: 1px solid #eef2f7;
-        }
-
-        .class-icon {
-            width: 43px;
-            height: 43px;
-            border-radius: 10px;
-            background: #eff6ff;
-            color: #0369a1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 800;
-        }
-
-        .class-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .class-info strong {
-            color: #071a33;
-            font-size: 14px;
-        }
-
-        .class-info span {
-            color: #64748b;
-            font-size: 12px;
-        }
-
-        .rollover-box {
-            margin-top: 20px;
-            padding: 16px;
-            border-radius: 10px;
-            background: #071a33;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .rollover-box strong {
-            font-size: 13px;
-        }
-
-        .rollover-box span {
-            color: #bae6fd;
-            font-size: 12px;
-        }
-
-        /* =========================
-   FEES & BILLING
-========================== */
-
-.billing-feature {
-    background: #ffffff;
-}
-
-.billing-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 65px;
-    align-items: center;
-}
-
-.billing-visual {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 18px 40px rgba(7,26,51,0.08);
-}
-
-.billing-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    margin-bottom: 18px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.billing-header h3 {
-    color: #071a33;
-    font-size: 21px;
-}
-
-.invoice-status {
-    background: #dcfce7;
-    color: #166534;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 10px;
-    border-radius: 20px;
-}
-
-.invoice-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.invoice-details div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.invoice-details span,
-.billing-balance span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.invoice-details strong {
-    color: #071a33;
-    font-size: 13px;
-}
-
-.invoice-line {
-    display: flex;
-    justify-content: space-between;
-    padding: 13px 0;
-    border-bottom: 1px solid #eef2f7;
-}
-
-.invoice-line span {
-    color: #475569;
-    font-size: 13px;
-}
-
-.invoice-line strong {
-    color: #071a33;
-    font-size: 13px;
-}
-
-.invoice-total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 0;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.invoice-total span {
-    color: #071a33;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.invoice-total strong {
-    color: #0369a1;
-    font-size: 20px;
-}
-
-.billing-balance {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-top: 18px;
-}
-
-.billing-balance div {
-    background: #f8fafc;
-    border-radius: 10px;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.billing-balance strong {
-    color: #071a33;
-    font-size: 14px;
-}
-
-.statement-box {
-    margin-top: 18px;
-    padding: 16px;
-    border-radius: 10px;
-    background: #071a33;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.statement-box strong {
-    font-size: 13px;
-}
-
-.statement-box span {
-    color: #bae6fd;
-    font-size: 12px;
-}
-
-    /* =========================
-   PAYMENTS & RECEIPTING
-========================== */
-
-.payment-feature {
-    background: #f8fafc;
-}
-
-.payment-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 65px;
-    align-items: center;
-}
-
-.payment-visual {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 18px 40px rgba(7,26,51,0.08);
-}
-
-.payment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.payment-header h3 {
-    color: #071a33;
-    font-size: 21px;
-}
-
-.payment-status {
-    background: #dcfce7;
-    color: #166534;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 10px;
-    border-radius: 20px;
-}
-
-.receipt-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    margin-bottom: 22px;
-}
-
-.receipt-details div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.receipt-details span,
-.payment-reference span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.receipt-details strong,
-.payment-reference strong {
-    color: #071a33;
-    font-size: 13px;
-}
-
-.payment-amount {
-    padding: 20px;
-    border-radius: 12px;
-    background: #eff6ff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
-}
-
-.payment-amount span {
-    color: #475569;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.payment-amount strong {
-    color: #0369a1;
-    font-size: 21px;
-}
-
-.payment-reference {
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 0;
-    border-bottom: 1px solid #eef2f7;
-}
-
-.payment-allocation {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 18px;
-}
-
-.payment-allocation div {
-    background: #f8fafc;
-    border-radius: 10px;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.payment-allocation span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.payment-allocation strong {
-    color: #071a33;
-    font-size: 14px;
-}
-
-.receipt-footer {
-    margin-top: 18px;
-    padding: 16px;
-    border-radius: 10px;
-    background: #071a33;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.receipt-footer strong {
-    font-size: 13px;
-}
-
-.receipt-footer span {
-    color: #bae6fd;
-    font-size: 12px;
-}
-
-/* =========================
-   STUDENT STATEMENTS & ARREARS
-========================== */
-
-.statement-feature {
-    background: #ffffff;
-}
-
-.statement-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 65px;
-    align-items: center;
-}
-
-.statement-visual {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 18px 40px rgba(7,26,51,0.08);
-}
-
-.statement-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.statement-header h3 {
-    color: #071a33;
-    font-size: 21px;
-}
-
-.statement-status {
-    background: #dcfce7;
-    color: #166534;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 10px;
-    border-radius: 20px;
-}
-
-.statement-student {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 22px;
-}
-
-.statement-student div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.statement-student span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.statement-student strong {
-    color: #071a33;
-    font-size: 13px;
-}
-
-.statement-table {
-    border-top: 1px solid #e2e8f0;
-}
-
-.statement-table-header,
-.statement-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 20px;
-    padding: 13px 0;
-    border-bottom: 1px solid #eef2f7;
-}
-
-.statement-table-header span {
-    color: #64748b;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.statement-row span {
-    color: #475569;
-    font-size: 13px;
-}
-
-.statement-row strong {
-    color: #071a33;
-    font-size: 13px;
-}
-
-.statement-balance {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 18px;
-}
-
-.statement-balance div {
-    background: #f8fafc;
-    border-radius: 10px;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.statement-balance span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.statement-balance strong {
-    color: #071a33;
-    font-size: 14px;
-}
-
-.statement-balance .balance-due {
-    grid-column: 1 / -1;
-    background: #fff7ed;
-}
-
-.statement-balance .balance-due strong {
-    color: #c2410c;
-    font-size: 18px;
-}
-
-.statement-delivery {
-    margin-top: 18px;
-    padding: 16px;
-    border-radius: 10px;
-    background: #071a33;
-    color: white;
-}
-
-.statement-delivery strong {
-    font-size: 13px;
-}
-
-.delivery-options {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.delivery-options span {
-    background: rgba(255,255,255,0.1);
-    color: #bae6fd;
-    padding: 7px 10px;
-    border-radius: 6px;
-    font-size: 11px;
-}
-
-        /* =========================
-   ACCOUNTING & FINANCIAL MANAGEMENT
-========================== */
-
-.accounting-feature {
-    background: #f8fafc;
-}
-
-.accounting-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 65px;
-    align-items: center;
-}
-
-.accounting-visual {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 18px 40px rgba(7,26,51,0.08);
-}
-
-.accounting-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.accounting-header h3 {
-    color: #071a33;
-    font-size: 21px;
-}
-
-.accounting-status {
-    background: #dcfce7;
-    color: #166534;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 10px;
-    border-radius: 20px;
-}
-
-.account-summary {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 20px;
-}
-
-.account-card {
-    background: #f8fafc;
-    border-radius: 10px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-}
-
-.account-card span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.account-card strong {
-    color: #071a33;
-    font-size: 15px;
-}
-
-.report-list {
-    border-top: 1px solid #e2e8f0;
-}
-
-.report-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 0;
-    border-bottom: 1px solid #eef2f7;
-}
-
-.report-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 9px;
-    background: #eff6ff;
-    color: #0369a1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 800;
-    flex-shrink: 0;
-}
-
-.report-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    flex: 1;
-}
-
-.report-info strong {
-    color: #071a33;
-    font-size: 13px;
-}
-
-.report-info span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.report-status {
-    color: #166534;
-    background: #dcfce7;
-    padding: 5px 8px;
-    border-radius: 5px;
-    font-size: 10px;
-    font-weight: 700;
-}
-
-.accounting-footer {
-    margin-top: 18px;
-    padding: 16px;
-    border-radius: 10px;
-    background: #071a33;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.accounting-footer strong {
-    font-size: 13px;
-}
-
-.accounting-footer span {
-    color: #bae6fd;
-    font-size: 12px;
-}
-        
-/* =========================
-   ACADEMIC MANAGEMENT
-========================== */
-
-.academic-feature {
-    background: #ffffff;
-}
-
-.academic-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 65px;
-    align-items: center;
-}
-
-.academic-visual {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 18px 40px rgba(7,26,51,0.08);
-}
-
-.academic-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.academic-header h3 {
-    color: #071a33;
-    font-size: 21px;
-}
-
-.academic-status {
-    background: #dcfce7;
-    color: #166534;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 10px;
-    border-radius: 20px;
-}
-
-.academic-student {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 22px;
-}
-
-.academic-student div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.academic-student span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.academic-student strong {
-    color: #071a33;
-    font-size: 13px;
-}
-
-.results-table {
-    border-top: 1px solid #e2e8f0;
-}
-
-.results-header,
-.results-row {
-    display: grid;
-    grid-template-columns: 1fr 70px 60px;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 0;
-    border-bottom: 1px solid #eef2f7;
-}
-
-.results-header span {
-    color: #64748b;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.results-row strong {
-    color: #071a33;
-    font-size: 13px;
-}
-
-.results-row span {
-    color: #475569;
-    font-size: 13px;
-}
-
-.results-row b {
-    color: #0369a1;
-    background: #eff6ff;
-    padding: 5px 8px;
-    border-radius: 5px;
-    font-size: 11px;
-    text-align: center;
-}
-
-.academic-summary {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
-    margin-top: 18px;
-}
-
-.academic-summary div {
-    background: #f8fafc;
-    border-radius: 10px;
-    padding: 13px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.academic-summary span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.academic-summary strong {
-    color: #071a33;
-    font-size: 15px;
-}
-
-.report-card-box {
-    margin-top: 18px;
-    padding: 16px;
-    border-radius: 10px;
-    background: #071a33;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.report-card-box strong {
-    font-size: 13px;
-}
-
-.report-card-box span {
-    color: #bae6fd;
-    font-size: 12px;
-}
-
-    /* =========================
-   ATTENDANCE MANAGEMENT
-========================== */
-
-.attendance-feature {
-    background: #f8fafc;
-}
-
-.attendance-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 65px;
-    align-items: center;
-}
-
-.attendance-visual {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 18px 40px rgba(7,26,51,0.08);
-}
-
-.attendance-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.attendance-header h3 {
-    color: #071a33;
-    font-size: 21px;
-}
-
-.attendance-date {
-    background: #eff6ff;
-    color: #0369a1;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 10px;
-    border-radius: 20px;
-}
-
-.attendance-summary {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.attendance-summary div {
-    background: #f8fafc;
-    border-radius: 10px;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.attendance-summary span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.attendance-summary strong {
-    color: #071a33;
-    font-size: 18px;
-}
-
-.attendance-list {
-    border-top: 1px solid #e2e8f0;
-}
-
-.attendance-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 13px 0;
-    border-bottom: 1px solid #eef2f7;
-}
-
-.student-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: #eff6ff;
-    color: #0369a1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: 800;
-    flex-shrink: 0;
-}
-
-.attendance-student {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    flex: 1;
-}
-
-.attendance-student strong {
-    color: #071a33;
-    font-size: 13px;
-}
-
-.attendance-student span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.present-badge,
-.absent-badge,
-.late-badge {
-    font-size: 10px;
-    font-weight: 700;
-    padding: 5px 8px;
-    border-radius: 5px;
-}
-
-.present-badge {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.absent-badge {
-    background: #fee2e2;
-    color: #b91c1c;
-}
-
-.late-badge {
-    background: #fef3c7;
-    color: #92400e;
-}
-
-.attendance-footer {
-    margin-top: 18px;
-    padding: 16px;
-    border-radius: 10px;
-    background: #071a33;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.attendance-footer strong {
-    font-size: 13px;
-}
-
-.attendance-footer span {
-    color: #bae6fd;
-    font-size: 12px;
-}
-
-/* FEATURES OVERVIEW */
-
-.features-overview {
-    background: #f8fafc;
-    padding: 100px 0;
-}
-
-.section-heading {
-    text-align: center;
-    max-width: 760px;
-    margin: 0 auto 55px;
-}
-
-.section-heading .eyebrow {
-    display: inline-block;
-    color: #0891b2;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-    margin-bottom: 14px;
-}
-
-.section-heading h2 {
-    font-size: 42px;
-    line-height: 1.15;
-    color: #071a33;
-    margin-bottom: 18px;
-}
-
-.section-heading h2 span {
-    color: #0891b2;
-}
-
-.section-heading p {
-    color: #64748b;
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-.feature-overview-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-}
-
-.feature-overview-card {
-    display: block;
-    background: white;
-    padding: 28px;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    text-decoration: none;
-    transition: 0.25s ease;
-}
-
-.feature-overview-card:hover {
-    transform: translateY(-5px);
-    border-color: #67e8f9;
-    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.09);
-}
-
-.feature-overview-card > strong {
-    display: flex;
-    width: 42px;
-    height: 42px;
-    border-radius: 9px;
-    background: #e0f7fa;
-    color: #0891b2;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    margin-bottom: 20px;
-}
-
-.feature-overview-card h3 {
-    color: #071a33;
-    font-size: 19px;
-    margin-bottom: 11px;
-}
-
-.feature-overview-card p {
-    color: #64748b;
-    font-size: 14px;
-    line-height: 1.65;
-    margin-bottom: 18px;
-}
-
-.feature-overview-card span {
-    color: #0891b2;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-@media (max-width: 1000px) {
-    .feature-overview-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .features-overview {
-        padding: 75px 0;
-    }
-
-    .section-heading h2 {
-        font-size: 34px;
-    }
-
-    .feature-overview-grid {
-        grid-template-columns: 1fr;
-    }
-}
-        
-      
-
-        /* =========================
-           CONTACT
-        ========================== */
-
-        .contact {
-            background: #f8fafc;
-        }
-
-        .contact-box {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .contact-box h2 {
-            color: #071a33;
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .contact-box p {
-            color: #64748b;
-            margin-bottom: 10px;
-        }
-        .contact-form {
-    max-width: 650px;
-    margin: 35px auto 0;
-    text-align: left;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #071a33;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 13px 15px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #071a33;
-    font-family: inherit;
-    font-size: 15px;
-    box-sizing: border-box;
-    outline: none;
-    transition: 0.2s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #0891b2;
-    box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.10);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 140px;
-}
-
-.contact-form .btn {
-    margin-top: 5px;
-    cursor: pointer;
-    border: none;
-}
-
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-            background: #04101f;
-            color: #cbd5e1;
-            padding: 50px 0 25px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 35px;
-        }
-
-        footer h3 {
-            color: white;
-            margin-bottom: 12px;
-        }
-
-        footer h4 {
-            color: white;
-            margin-bottom: 12px;
-        }
-
-        footer p {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        footer a {
-            display: block;
-            color: #94a3b8;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        footer a:hover {
-            color: #38bdf8;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 20px;
-            text-align: center;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================== */
-
-       @media (max-width: 850px) {
-
-    .menu-button {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        right: 0;
-        background: #071a33;
-        padding: 20px 5%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .nav-links a {
-        padding: 12px 0;
-    }
-
-    .nav-portal {
-        text-align: center;
-    }
-
-    .hero-grid,
-    .about-grid,
-    .cedfin-grid,
-    .student-grid,
-    .class-grid,
-    .billing-grid,
-    .payment-grid,
-    .statement-grid,
-    .accounting-grid,
-    .academic-grid,
-    .attendance-grid {
-        grid-template-columns: 1fr;
-    }
-           
-    .hero {
-        padding: 75px 0;
-    }
-
-    .hero-panel {
-        padding: 25px;
-    }
-
-    .intro-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .intro-item:nth-child(2) {
-        border-right: none;
-    }
-
-    .intro-item:nth-child(-n+2) {
-        border-bottom: 1px solid #e2e8f0;
-    }
-
-    .feature-list {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
-@media (max-width: 520px) {
-
-    .hero h1 {
-        font-size: 39px;
-    }
-
-    .intro-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .intro-item {
-        border-right: none;
-        border-bottom: 1px solid #e2e8f0;
-    }
-
-    .intro-item:last-child {
-        border-bottom: none;
-    }
-
-    section {
-        padding: 70px 0;
-    }
-}
-        
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CedFin School Management System | Cedaron Hills Business Solutions</title>
+<meta name="description" content="CedFin is school management software from Cedaron Hills in Harare. Manage students, fees, payments, accounting, academics and attendance in one system.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b2540;--navy:#0c3964;--deep:#071a33;--sky:#38bdf8;--link:#0369a1;--paper:#f5f8fb;--line:#dbe4ee;--muted:#5b6b7e;--warn:#b45309;--ok:#166534;--okbg:#dcfce7}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font:16px/1.65 Inter,system-ui,Arial,sans-serif;color:var(--ink);background:#fff}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.wrap{width:min(1120px,92%);margin:auto}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;color:var(--deep)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:var(--deep);color:#fff}
+.bar{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:700 22px Fraunces,Georgia,serif}
+.logo small{font:500 12px Inter,sans-serif;color:#9fb6cc;margin-left:8px}
+nav{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500}
+nav a{color:#d6e3f0}
+nav a:hover{color:var(--sky)}
+nav .cta{background:var(--sky);color:var(--deep);padding:9px 16px;border-radius:6px;font-weight:600}
+nav .cta:hover{background:#7dd3fc;color:var(--deep)}
+.burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+
+/* buttons */
+.btn{display:inline-block;padding:13px 22px;border-radius:6px;font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;font-family:inherit}
+.btn-main{background:var(--sky);color:var(--deep)}
+.btn-main:hover{background:#7dd3fc}
+.btn-line{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-line:hover{background:#fff;color:var(--deep)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{background:var(--deep)}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--deep),var(--navy));color:#fff;padding:96px 0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(38px,5vw,60px);margin-bottom:22px}
+.hero p{color:#cfe0f1;font-size:18px;max-width:560px;margin-bottom:30px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* mock cards (illustrative data) */
+.mock{background:#fff;color:var(--ink);border-radius:12px;border:1px solid var(--line);box-shadow:0 20px 40px rgba(7,26,51,.14);overflow:hidden}
+.mock-h{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--paper);border-bottom:1px solid var(--line)}
+.mock-h strong{font-size:15px}
+.badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--okbg);color:var(--ok)}
+.badge.warn{background:#ffedd5;color:var(--warn)}
+.mock-r{display:flex;justify-content:space-between;gap:16px;padding:12px 20px;border-bottom:1px solid #eef2f7;font-size:14px}
+.mock-r span{color:var(--muted)}
+.mock-r b{font-weight:600;text-align:right}
+.mock-r.total{background:#eff6ff;border-bottom:0}
+.mock-r.total b{color:var(--link);font-size:16px}
+.mock-r.owing b{color:var(--warn)}
+.note{padding:10px 20px;font-size:12px;color:var(--muted);background:var(--paper)}
+
+/* strip */
+.strip{background:var(--paper);border-bottom:1px solid var(--line)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip div{padding:22px 18px;border-right:1px solid var(--line)}
+.strip div:last-child{border-right:0}
+.strip strong{display:block;font-size:15px}
+.strip span{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{padding:84px 0}
+.alt{background:var(--paper)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.split.flip>:first-child{order:2}
+h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:16px}
+.copy p{color:#46586b;margin-bottom:14px;max-width:520px}
+.copy .btn{margin-top:10px}
+.lead{max-width:640px;margin-bottom:40px;color:#46586b}
+
+/* feature index */
+.index{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.index a{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.index a:hover strong{color:var(--link)}
+.index strong{font-size:17px}
+.index span{color:var(--muted);font-size:14px;text-align:right}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.details{list-style:none;margin-top:24px}
+.details li{padding:14px 0;border-top:1px solid var(--line)}
+.details small{display:block;color:var(--muted);font-size:13px}
+.details a{color:var(--link);font-weight:600}
+form label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
+.f{margin-bottom:18px}
+input,textarea{width:100%;padding:12px 14px;border:1px solid #c3d0de;border-radius:6px;font:inherit;color:var(--ink);background:#fff}
+input:focus,textarea:focus{border-color:var(--link);outline:3px solid rgba(56,189,248,.35)}
+textarea{min-height:130px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+#status{margin-top:14px;font-weight:500}
+#status.ok{color:var(--ok)}
+#status.err{color:#b91c1c}
+
+/* footer */
+footer{background:var(--deep);color:#a9bdd1;padding:48px 0 22px;font-size:14px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:30px}
+footer h3,footer h4{color:#fff;font-size:16px;margin-bottom:10px}
+footer a{display:block;margin-bottom:7px}
+footer a:hover{color:var(--sky)}
+.copy-r{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;text-align:center}
+
+@media(max-width:850px){
+.burger{display:block}
+nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--deep);flex-direction:column;align-items:stretch;gap:0;padding:12px 4% 20px}
+nav.open{display:flex}
+nav a{padding:12px 0}
+nav .cta{text-align:center;margin-top:8px}
+.hero{padding:64px 0}
+.hero .wrap,.split,.contact-grid,.foot{grid-template-columns:1fr}
+.split.flip>:first-child{order:0}
+.strip .wrap{grid-template-columns:1fr 1fr}
+.strip div:nth-child(2){border-right:0}
+.strip div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+.index{grid-template-columns:1fr}
+section{padding:64px 0}
+}
+</style>
 </head>
-
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================== -->
-
 <header>
-
-    <div class="container navbar">
-
-        <a href="index.html" class="logo">
-            Cedaron <span>Hills</span>
-        </a>
-
-        <button class="menu-button"
-                id="menuButton"
-                aria-label="Open navigation menu">
-            ☰
-        </button>
-
-        <nav class="nav-links" id="navLinks">
-
-            <a href="#about">About</a>
-
-            <a href="#cedfin">CedFin</a>
-
-            <a href="#features">Features</a>
-            </a>
-
-        <a href="#contact">
-            Free Trial
-        </a>
-        
-        <a href="#contact">
-            Contact
-        </a>
-
-        </nav>
-
-    </div>
-
+<div class="wrap bar">
+<a href="#top" class="logo">Cedaron Hills<small>CedFin</small></a>
+<button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
+<nav id="menu">
+<a href="#about">About</a>
+<a href="#features">Features</a>
+<a href="#contact">Contact</a>
+<a href="#contact" class="cta">Request a free trial</a>
+</nav>
+</div>
 </header>
 
+<main id="top">
 
-<!-- =========================
-     HERO
-========================== -->
-
-<section class="hero">
-
-    <div class="container hero-grid">
-
-        <div>
-
-            <span class="eyebrow">
-                CEDARON HILLS BUSINESS SOLUTIONS
-            </span>
-
-            <h1>
-                Smarter school management.
-                <span>Made simple with CedFin.</span>
-            </h1>
-
-            <p class="hero-text">
-                CedFin is an easy-to-use school management system
-                that brings student records, fees, accounting,
-                academics and administration together in one place.
-            </p>
-
-            <div class="button-group">
-
-                <a href="#features" class="btn btn-primary">
-                    Explore CedFin
-                </a>
-
-            <a href="#contact" class="btn btn-outline">
-                Start Free Trial
-            </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-panel">
-
-            <div class="hero-panel-top">
-
-                <h2>CedFin</h2>
-
-                <span class="system-status">
-                    School Management System
-                </span>
-
-            </div>
-
-            <p>
-                Everything your school needs to manage
-                learners, finances, academic records and
-                everyday administration.
-            </p>
-
-            <ul class="hero-list">
-
-                <li>Student &amp; Class Management</li>
-
-                <li>Fees, Billing &amp; Payments</li>
-
-                <li>Accounting &amp; Financial Reports</li>
-
-                <li>Academic Records &amp; Attendance</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-    
-<!-- =========================
-     INTRO STRIP
-========================== -->
-
-<div class="intro-strip">
-
-    <div class="container intro-grid">
-
-        <div class="intro-item">
-            <strong>School Management</strong>
-            <span>Integrated school operations</span>
-        </div>
-
-        <div class="intro-item">
-            <strong>Financial Control</strong>
-            <span>Manage financial information</span>
-        </div>
-
-        <div class="intro-item">
-            <strong>Academic Tools</strong>
-            <span>Support academic administration</span>
-        </div>
-
-        <div class="intro-item">
-            <strong>Client Support</strong>
-            <span>Support for Cedaron Hills clients</span>
-        </div>
-
-    </div>
-
+<div class="hero">
+<div class="wrap">
+<div>
+<h1>Run your school’s records and fees from one system.</h1>
+<p>CedFin is school management software from Cedaron Hills in Harare. Keep students, classes, fees, payments, accounts, results and attendance together, so your office stops juggling files.</p>
+<div class="row">
+<a href="#contact" class="btn btn-main">Request a free trial</a>
+<a href="#features" class="btn btn-line">See what CedFin does</a>
+</div>
+</div>
+<div class="mock" aria-label="Example student statement">
+<div class="mock-h"><strong>Student statement</strong><span class="badge warn">Balance due</span></div>
+<div class="mock-r"><span>Student</span><b>Tendai Moyo, Form 2</b></div>
+<div class="mock-r"><span>Term 1 fees billed</span><b>$420.00</b></div>
+<div class="mock-r"><span>Payments received</span><b>$300.00</b></div>
+<div class="mock-r total owing"><span>Balance</span><b>$120.00</b></div>
+<div class="note">Sample data for illustration.</div>
+</div>
+</div>
 </div>
 
+<div class="strip">
+<div class="wrap">
+<div><strong>Students and classes</strong><span>Records and enrolment</span></div>
+<div><strong>Fees and accounts</strong><span>Billing, receipts, reports</span></div>
+<div><strong>Academics</strong><span>Results and attendance</span></div>
+<div><strong>Local support</strong><span>From Cedaron Hills, Harare</span></div>
+</div>
+</div>
 
-<!-- =========================
-     ABOUT
-========================== -->
-
-<section class="about" id="about">
-
-    <div class="container about-grid">
-
-        <div class="about-text">
-
-            <span class="eyebrow">
-                ABOUT CEDARON HILLS
-            </span>
-
-            <h2>
-                Practical technology for
-                better school management.
-            </h2>
-
-            <p>
-                Cedaron Hills Business Solutions develops practical
-                technology solutions for schools, with CedFin designed
-                to simplify the way schools manage their day-to-day
-                administration and operations.
-            </p>
-
-            <p>
-                CedFin brings student records, class management, fees,
-                accounting, academic records and attendance together
-                in one easy-to-use school management system.
-            </p>
-
-        </div>
-
-
-        <div class="about-card">
-
-            <h3>
-                Built for schools.
-            </h3>
-
-            <p>
-                We believe school management software should make
-                everyday tasks easier, keep important information
-                organised and give school administrators better
-                control over their operations.
-            </p>
-
-        </div>
-
-    </div>
-
+<section id="about">
+<div class="wrap split">
+<div class="copy">
+<h2>Software built around how schools actually work</h2>
+<p>Cedaron Hills Business Solutions is based in Hatcliffe, Harare. We build practical software for schools, and CedFin is our school management system.</p>
+<p>Student records, billing, accounts, results and attendance all live in one place and stay connected, so a change made in one area shows up everywhere it matters.</p>
+</div>
+<div class="mock">
+<div class="mock-h"><strong>What CedFin covers</strong></div>
+<div class="mock-r"><span>Students and classes</span><b>Records, enrolment, progression</b></div>
+<div class="mock-r"><span>Money</span><b>Fees, receipts, statements, accounting</b></div>
+<div class="mock-r"><span>Learning</span><b>Results and attendance</b></div>
+</div>
+</div>
 </section>
 
-<!-- =========================
-     CEDFIN
-========================== -->
-
-<section class="cedfin" id="cedfin">
-
-    <div class="container cedfin-grid">
-
-        <div class="cedfin-content">
-
-            <span class="eyebrow">
-                OUR SCHOOL MANAGEMENT SOLUTION
-            </span>
-
-            <h2>
-                CedFin School Management System
-            </h2>
-
-            <p>
-                CedFin brings student management, financial
-                management, academic administration and reporting
-                together in one integrated system.
-            </p>
-
-            <p>
-                It is designed to provide schools with an
-                easy-to-use system for managing important
-                information and everyday operations.
-            </p>
-
-            <div class="button-group">
-
-                <a href="#student-management"
-                   class="btn btn-primary">
-                    Explore Features
-                </a>
-
-        <a href="#contact"
-           class="btn"
-           style="border:1px solid #0c3964; color:#0c3964;">
-            Request a Trial
-        </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="product-panel">
-
-            <h3>
-                One system for key school operations
-            </h3>
-
-            <div class="product-row">
-
-                <div class="product-icon">S</div>
-
-                <span>Student information and management</span>
-
-            </div>
-
-            <div class="product-row">
-
-                <div class="product-icon">$</div>
-
-                <span>Fees, billing and payments</span>
-
-            </div>
-
-            <div class="product-row">
-
-                <div class="product-icon">A</div>
-
-                <span>Academic administration</span>
-
-            </div>
-
-            <div class="product-row">
-
-                <div class="product-icon">R</div>
-
-                <span>Reports and management information</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<section id="features" class="alt">
+<div class="wrap">
+<h2>Eight areas, one system</h2>
+<p class="lead">Pick any area to see how CedFin handles it.</p>
+<ul class="index">
+<li><a href="#students"><strong>Student management</strong><span>Profiles and contacts</span></a></li>
+<li><a href="#classes"><strong>Classes and enrolment</strong><span>Year-to-year progression</span></a></li>
+<li><a href="#billing"><strong>Fees and billing</strong><span>What is billed and owed</span></a></li>
+<li><a href="#payments"><strong>Payments and receipting</strong><span>Every payment recorded</span></a></li>
+<li><a href="#statements"><strong>Student statements</strong><span>Balances and arrears</span></a></li>
+<li><a href="#accounting"><strong>Accounting and finance</strong><span>Transactions and reports</span></a></li>
+<li><a href="#academics"><strong>Academic management</strong><span>Results and report cards</span></a></li>
+<li><a href="#attendance"><strong>Attendance</strong><span>Daily registers</span></a></li>
+</ul>
+</div>
 </section>
 
-<!-- FEATURES OVERVIEW -->
-
-<section id="features" class="features-overview">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="eyebrow">
-                CEDFIN SCHOOL MANAGEMENT SYSTEM
-            </span>
-
-            <h2>
-                Everything You Need to
-                <span>Manage Your School</span>
-            </h2>
-
-            <p>
-                CedFin brings school administration, student management,
-                fees, accounting and academic records together in one
-                easy-to-use system.
-            </p>
-
-        </div>
-
-
-        <div class="feature-overview-grid">
-
-        <a href="#student-management" class="feature-overview-card">
-            <strong>01</strong>
-            <h3>Student Management</h3>
-            <p>Keep student information organised in one central system.</p>
-            <span>Explore feature →</span>
-        </a>
-        
-        <a href="#class-enrolment" class="feature-overview-card">
-            <strong>02</strong>
-            <h3>Class &amp; Enrolment</h3>
-            <p>Organise learners and classes throughout the school year.</p>
-            <span>Explore feature →</span>
-        </a>
-        
-        <a href="#fees-billing" class="feature-overview-card">
-            <strong>03</strong>
-            <h3>Fees &amp; Billing</h3>
-            <p>Manage school fees and student financial information.</p>
-            <span>Explore feature →</span>
-        </a>
-        
-        <a href="#payments-receipting" class="feature-overview-card">
-            <strong>04</strong>
-            <h3>Payments &amp; Receipting</h3>
-            <p>Record and manage student payments with confidence.</p>
-            <span>Explore feature →</span>
-        </a>
-        
-        <a href="#student-statements" class="feature-overview-card">
-            <strong>05</strong>
-            <h3>Student Statements</h3>
-            <p>Maintain clear and organised student financial records.</p>
-            <span>Explore feature →</span>
-        </a>
-        
-        <a href="#accounting" class="feature-overview-card">
-            <strong>06</strong>
-            <h3>Accounting &amp; Finance</h3>
-            <p>Manage school finances and gain better financial control.</p>
-            <span>Explore feature →</span>
-        </a>
-        
-        <a href="#academic-management" class="feature-overview-card">
-            <strong>07</strong>
-            <h3>Academic Management</h3>
-            <p>Keep academic information and student performance records organised.</p>
-            <span>Explore feature →</span>
-        </a>
-        
-        <a href="#attendance" class="feature-overview-card">
-            <strong>08</strong>
-            <h3>Attendance Management</h3>
-            <p>Monitor student attendance and keep records organised.</p>
-            <span>Explore feature →</span>
-        </a>
-        </div>
-
-    </div>
-
+<section id="students">
+<div class="wrap split">
+<div class="copy">
+<h2>Every student’s details in one record</h2>
+<p>Store personal details, guardian contacts, class and fee information together. Find a student in seconds instead of searching through files.</p>
+<a href="#contact" class="btn btn-dark">Request a free trial</a>
+</div>
+<div class="mock">
+<div class="mock-h"><strong>Student profile</strong><span class="badge">Active</span></div>
+<div class="mock-r"><span>Name</span><b>Tendai Moyo</b></div>
+<div class="mock-r"><span>Class</span><b>Form 2 Blue</b></div>
+<div class="mock-r"><span>Guardian</span><b>Mrs R. Moyo</b></div>
+<div class="mock-r"><span>Fee status</span><b>Balance due</b></div>
+<div class="note">Sample data for illustration.</div>
+</div>
+</div>
 </section>
-    
-<!-- =========================
-     FEATURE 01
-     STUDENT MANAGEMENT
-========================== -->
 
-<section class="student-feature" id="student-management">
-
-    <div class="container student-grid">
-
-        <div class="student-text">
-
-            <span class="eyebrow">
-                STUDENT MANAGEMENT
-            </span>
-
-            <h2>
-                Keep Student Information
-                <span>Organised.</span>
-            </h2>
-
-            <p>
-                CedFin helps schools keep important student information
-                organised and easily accessible from one central system.
-            </p>
-
-            <p>
-                Manage student records, class information, contacts and
-                financial information while keeping everything connected
-                throughout the school year.
-            </p>
-
-            <a href="#contact" class="btn btn-primary">
-                Experience CedFin
-            </a>
-
-        </div>
-
-
-        <div class="student-card">
-
-            <div class="student-card-header">
-                <strong>Student Profile</strong>
-                <span>Active</span>
-            </div>
-
-            <div class="student-card-body">
-
-                <div>
-                    <small>Student</small>
-                    <strong>Student Record</strong>
-                </div>
-
-                <div>
-                    <small>Class</small>
-                    <strong>Current Class</strong>
-                </div>
-
-                <div>
-                    <small>Records</small>
-                    <strong>Organised &amp; Accessible</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<section id="classes" class="alt">
+<div class="wrap split flip">
+<div class="mock">
+<div class="mock-h"><strong>Class list: Form 2 Blue</strong><span class="badge">2026</span></div>
+<div class="mock-r"><span>Students enrolled</span><b>38</b></div>
+<div class="mock-r"><span>Class teacher</span><b>Mr T. Ncube</b></div>
+<div class="mock-r"><span>Next year</span><b>Promote to Form 3</b></div>
+<div class="note">Sample data for illustration.</div>
+</div>
+<div class="copy">
+<h2>Classes that carry over from year to year</h2>
+<p>Enrol learners into classes, move them between classes when needed and promote whole classes at year end without retyping anything.</p>
+<a href="#contact" class="btn btn-dark">Request a free trial</a>
+</div>
+</div>
 </section>
-    
-<!-- =========================
-     FEATURE 02
-     CLASS & ENROLMENT MANAGEMENT
-========================== -->
 
-<section class="class-feature" id="class-enrolment">
-
-    <div class="container class-grid">
-
-        <div class="class-card">
-
-            <div class="class-card-header">
-                <strong>School Year</strong>
-                <span>Current</span>
-            </div>
-
-            <div class="class-card-body">
-
-                <div>
-                    <small>Classes</small>
-                    <strong>Organised</strong>
-                </div>
-
-                <div>
-                    <small>Students</small>
-                    <strong>Enrolled</strong>
-                </div>
-
-                <div>
-                    <small>Progression</small>
-                    <strong>Managed</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="class-text">
-
-            <span class="eyebrow">
-                CLASS &amp; ENROLMENT
-            </span>
-
-            <h2>
-                Keep Your School
-                <span>Organised.</span>
-            </h2>
-
-            <p>
-                CedFin helps schools organise learners and classes
-                throughout the school year from one central system.
-            </p>
-
-            <p>
-                Keep enrolment information structured and make it
-                easier to manage changes as students progress
-                through the school.
-            </p>
-
-            <a href="#contact" class="btn btn-primary">
-                Experience CedFin
-            </a>
-
-        </div>
-
-    </div>
-
+<section id="billing">
+<div class="wrap split">
+<div class="copy">
+<h2>Know what is billed, paid and still owing</h2>
+<p>Set up fees once and bill every learner for the term. CedFin keeps each student’s account up to date as payments come in.</p>
+<a href="#contact" class="btn btn-dark">Request a free trial</a>
+</div>
+<div class="mock">
+<div class="mock-h"><strong>Term 1 invoice</strong><span class="badge warn">Part paid</span></div>
+<div class="mock-r"><span>Tuition</span><b>$350.00</b></div>
+<div class="mock-r"><span>Levy</span><b>$70.00</b></div>
+<div class="mock-r total"><span>Total billed</span><b>$420.00</b></div>
+<div class="note">Sample data for illustration.</div>
+</div>
+</div>
 </section>
-    
-<!-- =========================
-     FEATURE 03
-     FEES & BILLING
-========================== -->
 
-<section class="billing-feature" id="fees-billing">
-
-    <div class="container billing-grid">
-
-        <div class="billing-text">
-
-            <span class="eyebrow">
-                FEES &amp; BILLING
-            </span>
-
-            <h2>
-                Make School Fees
-                <span>Easier to Manage.</span>
-            </h2>
-
-            <p>
-                CedFin helps schools manage student fees, billing and
-                financial information in one organised system.
-            </p>
-
-            <p>
-                Keep track of what has been billed, what has been
-                received and what remains outstanding, giving your
-                school a clearer view of its fee position.
-            </p>
-
-            <a href="#contact" class="btn btn-primary">
-                Experience CedFin
-            </a>
-
-        </div>
-
-
-        <div class="billing-card">
-
-            <div class="billing-card-header">
-                <strong>Student Account</strong>
-                <span>Current</span>
-            </div>
-
-            <div class="billing-card-body">
-
-                <div>
-                    <small>Total Billed</small>
-                    <strong>School Fees</strong>
-                </div>
-
-                <div>
-                    <small>Payments</small>
-                    <strong>Recorded</strong>
-                </div>
-
-                <div>
-                    <small>Balance</small>
-                    <strong>Up to Date</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<section id="payments" class="alt">
+<div class="wrap split flip">
+<div class="mock">
+<div class="mock-h"><strong>Receipt</strong><span class="badge">Recorded</span></div>
+<div class="mock-r"><span>Received from</span><b>Mrs R. Moyo</b></div>
+<div class="mock-r"><span>For</span><b>Tendai Moyo, Term 1</b></div>
+<div class="mock-r total"><span>Amount</span><b>$300.00</b></div>
+<div class="note">Sample data for illustration.</div>
+</div>
+<div class="copy">
+<h2>Record each payment and issue the receipt</h2>
+<p>Capture payments against the right student and see the account update straight away. Every receipt is kept on file for later reference.</p>
+<a href="#contact" class="btn btn-dark">Request a free trial</a>
+</div>
+</div>
 </section>
-    
-<!-- =========================
-     FEATURE 04
-     PAYMENTS & RECEIPTING
-========================== -->
 
-<section class="payment-feature" id="payments-receipting">
-
-    <div class="container payment-grid">
-
-        <div class="payment-card">
-
-            <div class="payment-card-header">
-                <strong>Payment Record</strong>
-                <span>Recorded</span>
-            </div>
-
-            <div class="payment-card-body">
-
-                <div>
-                    <small>Student</small>
-                    <strong>Student Account</strong>
-                </div>
-
-                <div>
-                    <small>Payment</small>
-                    <strong>Received</strong>
-                </div>
-
-                <div>
-                    <small>Status</small>
-                    <strong>Updated</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="payment-text">
-
-            <span class="eyebrow">
-                PAYMENTS &amp; RECEIPTING
-            </span>
-
-            <h2>
-                Keep Payments
-                <span>Under Control.</span>
-            </h2>
-
-            <p>
-                CedFin helps schools record and manage student payments
-                while keeping financial information organised.
-            </p>
-
-            <p>
-                Maintain a clear record of payments received and keep
-                student accounts up to date throughout the school year.
-            </p>
-
-            <a href="#contact" class="btn btn-primary">
-                Experience CedFin
-            </a>
-
-        </div>
-
-    </div>
-
+<section id="statements">
+<div class="wrap split">
+<div class="copy">
+<h2>Statements parents can understand</h2>
+<p>See each student’s financial position at a glance, spot arrears early and produce a statement whenever a parent or guardian asks for one.</p>
+<a href="#contact" class="btn btn-dark">Request a free trial</a>
+</div>
+<div class="mock">
+<div class="mock-h"><strong>Arrears overview</strong><span class="badge warn">3 students</span></div>
+<div class="mock-r"><span>Form 2 Blue</span><b>$120.00</b></div>
+<div class="mock-r"><span>Form 3 Red</span><b>$85.00</b></div>
+<div class="mock-r owing total"><span>Total outstanding</span><b>$205.00</b></div>
+<div class="note">Sample data for illustration.</div>
+</div>
+</div>
 </section>
-    
-<!-- =========================
-     FEATURE 05
-     STUDENT STATEMENTS & ARREARS
-========================== -->
 
-<section class="statement-feature" id="student-statements">
-
-    <div class="container statement-grid">
-
-        <div class="statement-text">
-
-            <span class="eyebrow">
-                STUDENT STATEMENTS
-            </span>
-
-            <h2>
-                Clearer Student
-                <span>Financial Records.</span>
-            </h2>
-
-            <p>
-                CedFin gives schools a clear view of each student's
-                financial position, helping administrators monitor
-                balances and keep financial records organised.
-            </p>
-
-            <p>
-                Generate and share student statements when needed,
-                making communication with parents and guardians easier.
-            </p>
-
-            <a href="#contact" class="btn btn-primary">
-                Experience CedFin
-            </a>
-
-        </div>
-
-
-        <div class="statement-card">
-
-            <div class="statement-card-header">
-                <strong>Student Statement</strong>
-                <span>Current</span>
-            </div>
-
-            <div class="statement-card-body">
-
-                <div>
-                    <small>Account</small>
-                    <strong>Student Account</strong>
-                </div>
-
-                <div>
-                    <small>Financial Position</small>
-                    <strong>Updated</strong>
-                </div>
-
-                <div>
-                    <small>Statement</small>
-                    <strong>Available</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<section id="accounting" class="alt">
+<div class="wrap split flip">
+<div class="mock">
+<div class="mock-h"><strong>Financial summary</strong><span class="badge">Term 1</span></div>
+<div class="mock-r"><span>Fees received</span><b>$12,400.00</b></div>
+<div class="mock-r"><span>Supplier invoices</span><b>$3,150.00</b></div>
+<div class="mock-r"><span>Supplier payments</span><b>$2,800.00</b></div>
+<div class="note">Sample data for illustration.</div>
+</div>
+<div class="copy">
+<h2>Your school’s accounts, not just its fees</h2>
+<p>Record income and expenses, track supplier invoices and payments, and run reports that show where the school stands financially.</p>
+<a href="#contact" class="btn btn-dark">Request a free trial</a>
+</div>
+</div>
 </section>
-    
-<!-- =========================
-     FEATURE 06
-     ACCOUNTING & FINANCIAL MANAGEMENT
-========================== -->
 
-<section class="accounting-feature" id="accounting">
-
-    <div class="container accounting-grid">
-
-        <div class="accounting-card">
-
-            <div class="accounting-card-header">
-                <strong>Financial Overview</strong>
-                <span>Current</span>
-            </div>
-
-            <div class="accounting-card-body">
-
-                <div>
-                    <small>Transactions</small>
-                    <strong>Organised</strong>
-                </div>
-
-                <div>
-                    <small>Reports</small>
-                    <strong>Available</strong>
-                </div>
-
-                <div>
-                    <small>Financial Control</small>
-                    <strong>Improved</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="accounting-text">
-
-            <span class="eyebrow">
-                ACCOUNTING &amp; FINANCE
-            </span>
-
-            <h2>
-                Better Control of
-                <span>School Finances.</span>
-            </h2>
-
-            <p>
-                CedFin helps schools manage their financial activities
-                in one organised system, giving administrators a clearer
-                view of the school's financial position.
-            </p>
-
-            <p>
-                Keep financial information organised and access useful
-                reports to support better financial management and
-                decision-making.
-            </p>
-
-            <a href="#contact" class="btn btn-primary">
-                Experience CedFin
-            </a>
-
-        </div>
-
-    </div>
-
+<section id="academics">
+<div class="wrap split">
+<div class="copy">
+<h2>Results and report cards without the spreadsheets</h2>
+<p>Capture marks by subject, keep each student’s academic history and prepare report cards from the same records.</p>
+<a href="#contact" class="btn btn-dark">Request a free trial</a>
+</div>
+<div class="mock">
+<div class="mock-h"><strong>Term results</strong><span class="badge">Form 2</span></div>
+<div class="mock-r"><span>Mathematics</span><b>72%</b></div>
+<div class="mock-r"><span>English</span><b>68%</b></div>
+<div class="mock-r"><span>Science</span><b>75%</b></div>
+<div class="note">Sample data for illustration.</div>
+</div>
+</div>
 </section>
-    
-<!-- =========================
-     FEATURE 07
-     ACADEMIC MANAGEMENT
-========================== -->
 
-<section class="academic-feature" id="academic-management">
-
-    <div class="container academic-grid">
-
-        <div class="academic-text">
-
-            <span class="eyebrow">
-                ACADEMIC MANAGEMENT
-            </span>
-
-            <h2>
-                Keep Academic Records
-                <span>Organised.</span>
-            </h2>
-
-            <p>
-                CedFin helps schools manage academic information and
-                keep student performance records organised throughout
-                the school year.
-            </p>
-
-            <p>
-                Keep important academic information together so that
-                schools can review student progress and prepare
-                meaningful academic records.
-            </p>
-
-            <a href="#contact" class="btn btn-primary">
-                Experience CedFin
-            </a>
-
-        </div>
-
-
-        <div class="academic-card">
-
-            <div class="academic-card-header">
-                <strong>Academic Record</strong>
-                <span>Current</span>
-            </div>
-
-            <div class="academic-card-body">
-
-                <div>
-                    <small>Student</small>
-                    <strong>Student Record</strong>
-                </div>
-
-                <div>
-                    <small>Performance</small>
-                    <strong>Recorded</strong>
-                </div>
-
-                <div>
-                    <small>Academic History</small>
-                    <strong>Organised</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<section id="attendance" class="alt">
+<div class="wrap split flip">
+<div class="mock">
+<div class="mock-h"><strong>Register: Form 2 Blue</strong><span class="badge">Today</span></div>
+<div class="mock-r"><span>Present</span><b>35</b></div>
+<div class="mock-r"><span>Late</span><b>1</b></div>
+<div class="mock-r"><span>Absent</span><b>2</b></div>
+<div class="note">Sample data for illustration.</div>
+</div>
+<div class="copy">
+<h2>Daily registers tied to each student</h2>
+<p>Mark who is present, late or absent and keep the history on the student’s record, so patterns are easy to spot.</p>
+<a href="#contact" class="btn btn-dark">Request a free trial</a>
+</div>
+</div>
 </section>
-    
-<!-- =========================
-     FEATURE 08
-     ATTENDANCE MANAGEMENT
-========================== -->
 
-<section class="attendance-feature" id="attendance">
-
-    <div class="container attendance-grid">
-
-        <div class="attendance-card">
-
-            <div class="attendance-card-header">
-                <strong>Attendance Overview</strong>
-                <span>Current</span>
-            </div>
-
-            <div class="attendance-card-body">
-
-                <div>
-                    <small>Present</small>
-                    <strong>Recorded</strong>
-                </div>
-
-                <div>
-                    <small>Attendance</small>
-                    <strong>Monitored</strong>
-                </div>
-
-                <div>
-                    <small>Records</small>
-                    <strong>Organised</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="attendance-text">
-
-            <span class="eyebrow">
-                ATTENDANCE MANAGEMENT
-            </span>
-
-            <h2>
-                Stay on Top of
-                <span>Student Attendance.</span>
-            </h2>
-
-            <p>
-                CedFin helps schools keep attendance information
-                organised and gives administrators a clearer view
-                of student attendance throughout the school year.
-            </p>
-
-            <p>
-                Keep attendance records connected to the wider
-                student management system for easier administration.
-            </p>
-
-            <a href="#contact" class="btn btn-primary">
-                Experience CedFin
-            </a>
-
-        </div>
-
-    </div>
-
+<section id="contact">
+<div class="wrap contact-grid">
+<div>
+<h2>Try CedFin at your school</h2>
+<p class="lead" style="margin-bottom:0">Tell us about your school and we will reply within 24 hours to arrange a free trial.</p>
+<ul class="details">
+<li><small>Email</small><a href="mailto:info@cedaronhills.com">info@cedaronhills.com</a></li>
+<li><small>Location</small>Hatcliffe, Harare</li>
+</ul>
+</div>
+<form action="https://formspree.io/f/xwlveany" method="POST" id="form">
+<div class="f"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" required></div>
+<div class="f"><label for="email">Email address</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+<div class="f"><label for="phone">Phone number (optional)</label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+<div class="f"><label for="school">School or organisation</label><input id="school" name="company" autocomplete="organization"></div>
+<div class="f"><label for="message">How can we help?</label><textarea id="message" name="message" required></textarea></div>
+<input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+<input type="hidden" name="_subject" value="New CedFin website enquiry">
+<button type="submit" class="btn btn-dark" id="send">Send message</button>
+<p id="status" role="status"></p>
+</form>
+</div>
 </section>
-    
-<!-- =========================
-     FREE TRIAL
-========================== -->
 
-    
-<!-- =========================
-     CONTACT
-========================== -->
-<section class="contact" id="contact">
-
-    <div class="container">
-
-        <div class="contact-box">
-
-            <span class="eyebrow">
-                GET IN TOUCH
-            </span>
-
-            <h2>
-                Send Us a Message
-            </h2>
-
-            <p>
-                Fill out the form below and our team will get back
-                to you within 24 hours.
-            </p>
-
-            <form
-                action="https://formspree.io/f/xwlveany"
-                method="POST"
-                class="contact-form"
-                id="contactForm"
-            >
-
-                <div class="form-group">
-
-                    <label for="name">
-                        Full Name *
-                    </label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Jack Mendes"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="email">
-                        Email Address *
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="mendes@company.co.zw"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="phone">
-                        Phone Number
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        placeholder="+263 77 123 4567"
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="company">
-                        School / Organisation
-                    </label>
-
-                    <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        placeholder="Your school or organisation"
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="message">
-                        Message *
-                    </label>
-
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows="6"
-                        placeholder="Tell us how we can help..."
-                        required
-                    ></textarea>
-
-                </div>
-
-
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="New CedFin Website Enquiry"
-                >
-
-
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                    id="submitButton"
-                >
-                    Send Message
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-    
-<!-- =========================
-     FOOTER
-========================== -->
+</main>
 
 <footer>
-
-    <div class="container footer-grid">
-
-        <div>
-
-            <h3>
-                Cedaron Hills
-            </h3>
-
-    <p>
-        CedFin is an easy-to-use school management system designed
-        to help schools manage students, fees, accounting, academics
-        and everyday school administration more effectively.
-    </p>
-
-        </div>
-
-
-        <div>
-
-            <h4>
-                Website
-            </h4>
-
-            <a href="#about">About</a>
-
-            <a href="#cedfin">CedFin</a>
-            <a href="#features">Features</a>
-
-             
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="container footer-bottom">
-
-        <p>
-            © 2026 Cedaron Hills Business Solutions.
-            All rights reserved.
-        </p>
-
-    </div>
-
+<div class="wrap foot">
+<div>
+<h3>Cedaron Hills Business Solutions</h3>
+<p>Makers of CedFin, a school management system for student records, fees, accounting, academics and attendance.</p>
+</div>
+<div>
+<h4>Explore</h4>
+<a href="#about">About</a>
+<a href="#features">Features</a>
+<a href="#contact">Request a free trial</a>
+</div>
+<div>
+<h4>Contact</h4>
+<a href="mailto:info@cedaronhills.com">info@cedaronhills.com</a>
+<p>Hatcliffe, Harare</p>
+</div>
+</div>
+<div class="wrap copy-r">&copy; 2026 Cedaron Hills Business Solutions. All rights reserved.</div>
 </footer>
 
-
-<!-- =========================
-     MOBILE MENU
-========================== -->
-
 <script>
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}));
 
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
-
-    menuButton.addEventListener("click", function () {
-
-        navLinks.classList.toggle("show");
-
-    });
-
-
-    document.querySelectorAll(".nav-links a").forEach(function(link) {
-
-        link.addEventListener("click", function() {
-
-            navLinks.classList.remove("show");
-
-        });
-
-    });
-
-</script>
-<script>
-
-const contactForm = document.getElementById("contactForm");
-
-contactForm.addEventListener("submit", async function(event) {
-
-    event.preventDefault();
-
-    const submitButton = document.getElementById("submitButton");
-
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending...";
-
-    const formData = new FormData(contactForm);
-
-    try {
-
-        const response = await fetch(
-            contactForm.action,
-            {
-                method: "POST",
-                body: formData,
-                headers: {
-                    "Accept": "application/json"
-                }
-            }
-        );
-
-        if (response.ok) {
-
-            window.location.href = "thank-you.html";
-
-        } else {
-
-            submitButton.disabled = false;
-            submitButton.textContent = "Send Message";
-
-            alert(
-                "There was a problem sending your message. Please try again."
-            );
-
-        }
-
-    } catch (error) {
-
-        submitButton.disabled = false;
-        submitButton.textContent = "Send Message";
-
-        alert(
-            "There was a connection problem. Please try again."
-        );
-
-    }
-
+const form=document.getElementById('form'),send=document.getElementById('send'),st=document.getElementById('status');
+form.addEventListener('submit',async e=>{
+e.preventDefault();
+send.disabled=true;send.textContent='Sending…';st.className='';st.textContent='';
+try{
+const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+if(r.ok){form.reset();st.className='ok';st.textContent='Thank you. We have your message and will reply within 24 hours.'}
+else{throw new Error()}
+}catch(_){st.className='err';st.textContent='Your message did not send. Please try again, or email info@cedaronhills.com.'}
+send.disabled=false;send.textContent='Send message';
 });
-
 </script>
 </body>
 </html>
